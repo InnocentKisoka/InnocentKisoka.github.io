@@ -3,721 +3,384 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Innocent Kisoka · MSc Artificial Intelligence · USI</title>
-    <meta name="description" content="Innocent Kisoka — MSc Artificial Intelligence at Università della Svizzera italiana. Research in LLMs, representation learning, and GPU/HPC systems (CSCS).">
+    <title>Innocent Kisoka · MSc Artificial Intelligence · USI Lugano</title>
+    <meta name="description" content="Innocent Kisoka — MSc Artificial Intelligence, Università della Svizzera italiana. Research in large language models, representation learning, and high-performance GPU computing.">
     <meta name="author" content="Innocent Kisoka">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
-        
-        :root {
-            --accent: #22d3ee;
+        @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&amp;display=swap');
+        body { font-family: 'Source Sans 3', system-ui, sans-serif; }
+        .font-serif-display { font-family: 'Source Serif 4', Georgia, serif; }
+        html { scroll-behavior: smooth; }
+        .nav-link { transition: color 0.15s ease; }
+        .nav-link:hover, .nav-active { color: #e2e8f0; }
+        .glass { background: rgba(2, 6, 23, 0.92); backdrop-filter: blur(12px); }
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+            outline: 2px solid #64748b; outline-offset: 2px;
         }
-        
-        body {
-            font-family: 'Inter', system_ui, sans-serif;
-        }
-        
-        .font-display {
-            font-family: 'Inter', system-ui, sans-serif;
-            font-weight: 600;
-        }
-
-        .section-header {
-            font-family: 'Inter', system-ui, sans-serif;
-            letter-spacing: -0.03em;
-            font-weight: 600;
-        }
-
-        .nav-link {
-            transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .nav-link:hover {
-            color: #22d3ee;
-        }
-
-        .glass {
-            background: rgba(15, 23, 42, 0.8);
-            backdrop-filter: blur(20px);
-        }
-
-        .project-card {
-            transition: transform 0.2s cubic-bezier(0.4, 0.0, 0.2, 1), 
-                       box-shadow 0.2s cubic-bezier(0.4, 0.0, 0.2, 1),
-                       border-color 0.2s;
-        }
-        
-        .project-card:hover {
-            border-color: #475569;
-            background-color: #0f172a;
-        }
-
-        .tech-tag {
-            background-color: #1e293b;
-            transition: all 0.2s;
-        }
-
-        .skill-pill {
-            transition: all 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
-        }
-        
-        .skill-pill:hover {
-            border-color: #475569;
-            background-color: #0f172a;
-        }
-
-        .accent-text {
-            color: #22d3ee;
-        }
-
-        .gradient-text {
-            background: linear-gradient(90deg, #22d3ee, #67e8f9);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-bg {
-            background: radial-gradient(at center, #0f172a 0%, #020617 70%);
-        }
-
-        .timeline-dot {
-            box-shadow: 0 0 0 4px #0f172a, 0 0 0 7px #22d3ee20;
-        }
-
-        .modal {
-            animation: modalPop 0.2s cubic-bezier(0.32, 0.72, 0, 1);
-        }
-
-        @keyframes modalPop {
-            from {
-                opacity: 0;
-                transform: scale(0.96) translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
-        }
-
-        .nav-active {
-            color: #22d3ee;
-            position: relative;
-        }
-        
-        .nav-active:after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(to right, #22d3ee, transparent);
-        }
-
-        .stat-number {
-            font-variant-numeric: tabular-nums;
+        .project-row { transition: background-color 0.15s ease; }
+        .project-row:hover { background-color: rgba(15, 23, 42, 0.8); }
+        .modal { animation: fadeIn 0.15s ease; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-200 antialiased">
-    <!-- Navbar -->
-    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-800">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="flex items-center justify-between h-16">
-                <!-- Logo -->
-                <div class="flex items-center gap-x-3">
-                    <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-400 to-sky-500 flex items-center justify-center">
-                        <span class="font-display text-slate-950 font-bold text-xl tracking-tighter">IK</span>
-                    </div>
-                    <div>
-                        <span class="font-display font-semibold text-xl tracking-tighter">Innocent Kisoka</span>
-                    </div>
+<body class="bg-slate-950 text-slate-300 antialiased">
+
+    <!-- Top bar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-800/80">
+        <div class="max-w-3xl mx-auto px-5 sm:px-6">
+            <div class="flex items-center justify-between h-14">
+                <a href="#" class="text-sm font-semibold tracking-tight text-slate-100">Innocent Kisoka</a>
+                <div class="hidden sm:flex items-center gap-x-6 text-[13px] text-slate-400 font-medium">
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#research" class="nav-link">Research</a>
+                    <a href="#experience" class="nav-link">Education</a>
+                    <a href="#contact" class="nav-link">Contact</a>
                 </div>
-
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
-                    <a href="#about" class="nav-link text-slate-300 hover:text-white">About</a>
-                    <a href="#interests" class="nav-link text-slate-300 hover:text-white">Interests</a>
-                    <a href="#hpc" class="nav-link text-slate-300 hover:text-white">GPU systems</a>
-                    <a href="#projects" class="nav-link text-slate-300 hover:text-white">Projects</a>
-                    <a href="#publications" class="nav-link text-slate-300 hover:text-white">Publications</a>
-                    <a href="#experience" class="nav-link text-slate-300 hover:text-white">Education</a>
-                    <a href="#contact" class="nav-link text-slate-300 hover:text-white">Contact</a>
-                </div>
-
-                <!-- Actions -->
-                <div class="hidden md:flex items-center gap-x-3">
-                    <a href="#" 
-                       onclick="downloadResume()"
-                       class="px-4 py-2 text-sm font-medium rounded-lg border border-slate-700 hover:bg-slate-900 transition-colors flex items-center gap-x-2">
-                        <i class="fa-solid fa-download text-xs"></i>
-                        <span>Resume</span>
+                <div class="flex items-center gap-x-2">
+                    <a href="#" onclick="downloadResume(); return false;"
+                       class="text-[13px] px-3 py-1.5 rounded border border-slate-700 text-slate-300 hover:border-slate-500 hover:text-white transition-colors">
+                        CV
                     </a>
-                    <a href="#contact" 
-                       class="px-5 py-2 text-sm font-medium bg-slate-100 text-slate-900 rounded-lg hover:bg-white transition-colors">
-                        Contact
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn"
-                        class="md:hidden w-10 h-10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-900 rounded-lg transition-colors"
-                        onclick="toggleMobileMenu()">
-                    <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950">
-            <div class="px-6 py-6 flex flex-col gap-y-4 text-sm font-medium">
-                <a href="#about" onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white py-1">About</a>
-                <a href="#interests" onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white py-1">Interests</a>
-                <a href="#hpc" onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white py-1">GPU systems</a>
-                <a href="#projects" onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white py-1">Projects</a>
-                <a href="#publications" onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white py-1">Publications</a>
-                <a href="#experience" onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white py-1">Education</a>
-                <a href="#contact" onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white py-1">Contact</a>
-                
-                <div class="pt-4 flex flex-col gap-y-3 border-t border-slate-800">
-                    <a href="#" onclick="downloadResume(); toggleMobileMenu();" 
-                       class="flex items-center justify-center gap-x-2 px-4 py-3 rounded-lg border border-slate-700 text-sm">
-                        <i class="fa-solid fa-download text-xs"></i>
-                        <span>Download Resume</span>
-                    </a>
-                    <a href="#contact" onclick="toggleMobileMenu()"
-                       class="flex items-center justify-center gap-x-2 px-4 py-3 rounded-lg bg-slate-100 text-slate-900 text-sm font-medium">
-                        Contact
+                    <a href="https://github.com/InnocentKisoka" target="_blank" rel="noopener"
+                       class="text-[13px] px-3 py-1.5 rounded border border-slate-700 text-slate-300 hover:border-slate-500 hover:text-white transition-colors">
+                        GitHub
                     </a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <header class="pt-16 min-h-[85vh] flex items-center hero-bg relative overflow-hidden">
-        <div class="max-w-6xl mx-auto px-6 pt-12 pb-16">
-            <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
-                <!-- Photo (appears first on mobile, right side on desktop) -->
-                <div class="order-1 md:order-2 flex-shrink-0">
-                    <!-- Profile photo extracted from CV -->
-                    <img 
-                        src="profile.jpg" 
-                        alt="Innocent Kisoka"
-                        class="w-56 h-56 md:w-72 md:h-72 rounded-2xl object-cover border border-slate-700 shadow-xl object-top"
-                    >
-                </div>
-
-                <!-- Text content -->
-                <div class="order-2 md:order-1 flex-1 max-w-2xl">
-                    <!-- Status -->
-                    <p class="text-sm font-medium text-slate-500 mb-5 tracking-wide">MSc Artificial Intelligence · Università della Svizzera italiana</p>
-
-                    <h1 class="text-5xl md:text-6xl font-display tracking-tight leading-[1.1] mb-5 text-white">
-                        Innocent Kisoka
-                    </h1>
-                    <p class="text-lg md:text-xl text-slate-300 font-medium mb-4">
-                        Machine learning researcher · GPU systems
-                    </p>
-
-                    <p class="max-w-xl text-base md:text-lg text-slate-400 mb-8 leading-relaxed">
-                        Preference optimization and representation learning for LLMs; CUDA/HPC at the
-                        Swiss National Supercomputing Centre (CSCS). Seeking PhD and research or industry roles.
-                    </p>
-
-                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-                        <a href="#projects" 
-                           class="px-6 h-11 inline-flex items-center justify-center rounded-lg bg-slate-100 text-slate-900 font-medium text-sm hover:bg-white transition-colors">
-                            Projects
-                        </a>
-                        <a href="#contact" 
-                           class="px-6 h-11 inline-flex items-center justify-center rounded-lg border border-slate-700 hover:border-slate-500 font-medium transition-colors text-sm text-slate-200">
-                            Contact
-                        </a>
-                        <a href="https://github.com/InnocentKisoka" target="_blank"
-                           class="px-6 h-11 inline-flex items-center justify-center rounded-lg text-sm text-slate-400 hover:text-white transition-colors">
-                            GitHub
-                        </a>
-                    </div>
-
-                    <div class="flex flex-wrap gap-x-6 gap-y-2 mt-10 pt-6 border-t border-slate-800 text-sm text-slate-500">
-                        <span><span class="text-slate-300 font-medium">Focus</span> · LLMs, representation learning</span>
-                        <span><span class="text-slate-300 font-medium">Systems</span> · CUDA, MPI, CSCS</span>
-                        <span><span class="text-slate-300 font-medium">Based in</span> · Lugano, Switzerland</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </header>
-
-    <!-- About -->
-    <section id="about" class="max-w-6xl mx-auto px-6 pt-16 pb-12">
-        <div class="grid md:grid-cols-12 gap-x-12 gap-y-8 items-start">
-            <div class="md:col-span-4">
-                <div class="uppercase text-xs tracking-[0.15em] font-semibold text-slate-500 mb-3">Profile</div>
-                <h2 class="section-header text-3xl md:text-4xl tracking-tight font-semibold leading-none text-white">About</h2>
-            </div>
-            <div class="md:col-span-8 text-[16px] leading-relaxed text-slate-400 space-y-4">
-                <p>
-                    MSc student in Artificial Intelligence at Università della Svizzera italiana (USI), Lugano.
-                    Research interests include large language models, preference optimization, representation learning,
-                    and GPU-accelerated scientific computing.
-                </p>
-                <p>
-                    Completed the CSCS–USI Summer School 2026 on Effective High-Performance Computing and Data Analytics
-                    at the Swiss National Supercomputing Centre (CSCS), Switzerland, with instruction from industrial
-                    experts including NVIDIA. Skills: CUDA C++, GPU architectures, CuPy/Numba, MPI with CUDA.
-                    <a href="https://github.com/InnocentKisoka/cuda-hpc-portfolio" target="_blank" class="text-slate-300 underline decoration-slate-600 hover:text-white hover:decoration-slate-400">CUDA portfolio</a>.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Research Interests -->
-    <section id="interests" class="max-w-6xl mx-auto px-6 py-12">
-        <div class="mb-6">
-            <div class="uppercase text-xs tracking-[0.15em] font-semibold text-slate-500 mb-2">Research</div>
-            <h2 class="section-header text-3xl md:text-4xl tracking-tight font-semibold text-white">Areas of interest</h2>
-        </div>
-        <div class="grid md:grid-cols-3 gap-3">
-            <div class="p-5 bg-slate-900/80 border border-slate-800 rounded-xl">
-                <div class="font-semibold mb-1 text-slate-100">Large language models</div>
-                <p class="text-slate-400 text-sm">Preference optimization, controllable generation, low-resource NLP.</p>
-            </div>
-            <div class="p-5 bg-slate-900/80 border border-slate-800 rounded-xl">
-                <div class="font-semibold mb-1 text-slate-100">Representation learning</div>
-                <p class="text-slate-400 text-sm">Graph neural networks, knowledge graph embeddings, latent analysis.</p>
-            </div>
-            <div class="p-5 bg-slate-900/80 border border-slate-800 rounded-xl">
-                <div class="font-semibold mb-1 text-slate-100">High-performance computing</div>
-                <p class="text-slate-400 text-sm">CUDA, multi-GPU systems, MPI, scientific computing at CSCS.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" class="bg-slate-900 border-y border-slate-800 py-12">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-y-4 mb-10">
-                <div>
-                    <div class="uppercase text-xs tracking-[0.15em] font-semibold text-slate-500 mb-3">Technical skills</div>
-                    <h2 class="section-header text-3xl md:text-4xl tracking-tight font-semibold text-white">Skills</h2>
-                </div>
-                <p class="max-w-xs text-slate-500 text-sm">Machine learning, systems, and scientific computing.</p>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-                <!-- Core ML/AI -->
-                <div class="skill-pill col-span-2 md:col-span-1 px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-center gap-x-3 text-sm font-medium">
-                    <i class="fa-solid fa-brain text-xl w-5 text-violet-400"></i>
-                    <span>PyTorch</span>
-                </div>
-                <div class="skill-pill px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-center gap-x-3 text-sm font-medium">
-                    <span>PyTorch Geometric</span>
-                </div>
-                <div class="skill-pill px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-center gap-x-3 text-sm font-medium">
-                    <span>LLMs &amp; Generative AI</span>
-                </div>
-                <div class="skill-pill px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-center gap-x-3 text-sm font-medium">
-                    <span>NLP &amp; Transformers</span>
-                </div>
-                <div class="skill-pill px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-center gap-x-3 text-sm font-medium">
-                    <span>Graph Neural Networks</span>
-                </div>
-                <div class="skill-pill px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-center gap-x-3 text-sm font-medium">
-                    <span>Representation Learning</span>
-                </div>
-                
-                <!-- Programming -->
-                <div class="skill-pill px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-center gap-x-3 text-sm font-medium">
-                    <i class="fa-brands fa-python text-xl w-5 text-sky-400"></i>
-                    <span>Python</span>
-                </div>
-                <div class="skill-pill px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-center gap-x-3 text-sm font-medium">
-                    <span>NumPy / Pandas</span>
-                </div>
-                <div class="skill-pill px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-center gap-x-3 text-sm font-medium">
-                    <span>Parallel Computing (MPI, OpenMP)</span>
-                </div>
-                <div class="skill-pill px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-center gap-x-3 text-sm font-medium">
-                    <i class="fa-solid fa-microchip text-xl w-5 text-green-400"></i>
-                    <span>CUDA C++</span>
-                </div>
-                <div class="skill-pill px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-center gap-x-3 text-sm font-medium">
-                    <span>CUDA Python / CuPy / Numba</span>
-                </div>
-                <div class="skill-pill px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-center gap-x-3 text-sm font-medium">
-                    <span>C++ / C#</span>
-                </div>
-                <div class="skill-pill px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-center gap-x-3 text-sm font-medium">
-                    <span>Scientific ML</span>
-                </div>
-                <div class="skill-pill px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-center gap-x-3 text-sm font-medium">
-                    <span>High-Performance Computing</span>
-                </div>
-                <div class="skill-pill px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-center gap-x-3 text-sm font-medium">
-                    <span>cuBLAS / GPU Libraries</span>
-                </div>
-                <div class="skill-pill px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-center gap-x-3 text-sm font-medium">
-                    <span>MPI + CUDA</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CSCS-USI Summer School / HPC & CUDA -->
-        <!-- HPC & CUDA -->
-    <section id="hpc" class="max-w-6xl mx-auto px-6 py-14">
-        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-6">
-            <div>
-                <div class="uppercase text-xs tracking-[0.15em] font-semibold text-slate-500 mb-2">GPU systems</div>
-                <h2 class="section-header text-3xl md:text-4xl tracking-tight font-semibold text-white">High-performance computing</h2>
-                <p class="text-slate-400 mt-2 text-[15px]">
-                    CSCS–USI Summer School 2026 · Effective HPC &amp; Data Analytics · July 2026
-                </p>
-            </div>
-            <div class="flex gap-2 text-sm">
-                <a href="https://github.com/InnocentKisoka/cuda-hpc-portfolio" target="_blank"
-                   class="px-3 py-2 rounded-lg border border-slate-700 text-slate-300 hover:border-slate-500 hover:text-white transition-colors">View CUDA work</a>
-            </div>
-        </div>
-        <p class="text-slate-400 text-[15px] max-w-3xl mb-5 leading-relaxed">
-            Training at the <strong class="text-slate-200">Swiss National Supercomputing Centre (CSCS)</strong>, Switzerland,
-            organised with Università della Svizzera italiana. Curriculum covered GPU architectures, CUDA programming,
-            and GPU-accelerated Python, with instruction from industrial experts including NVIDIA.
-        </p>
-        <div class="flex flex-wrap gap-2 mb-5">
-            <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700 text-xs text-slate-300">CUDA C++</span>
-            <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700 text-xs text-slate-300">Kernels · memory model</span>
-            <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700 text-xs text-slate-300">Shared memory · streams · events</span>
-            <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700 text-xs text-slate-300">cuBLAS</span>
-            <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700 text-xs text-slate-300">CuPy · Numba · JAX</span>
-            <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700 text-xs text-slate-300">MPI + CUDA</span>
-            <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700 text-xs text-slate-300">NVIDIA GPU stack</span>
-            <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700 text-xs text-slate-300">Profiling · CSCS jobs</span>
-        </div>
-        <p class="text-sm text-slate-500">
-            <a href="https://github.com/InnocentKisoka/cuda-memory-and-kernels" class="hover:text-cyan-400" target="_blank">kernels</a>
-            · <a href="https://github.com/InnocentKisoka/cuda-stencils-shared-memory" class="hover:text-cyan-400" target="_blank">stencils</a>
-            · <a href="https://github.com/InnocentKisoka/cuda-async-pipelines" class="hover:text-cyan-400" target="_blank">async</a>
-            · <a href="https://github.com/InnocentKisoka/cuda-pde-miniapp" class="hover:text-cyan-400" target="_blank">PDE mini-app</a>
-            · <a href="https://github.com/InnocentKisoka/cuda-mpi-domain-decomposition" class="hover:text-cyan-400" target="_blank">MPI+CUDA</a>
-        </p>
-    </section>
-
-<!-- Projects -->
-        <section id="projects" class="max-w-6xl mx-auto px-6 py-14">
-        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
-            <div>
-                <div class="uppercase text-xs tracking-[0.15em] font-semibold text-slate-500 mb-2">Selected work</div>
-                <h2 class="section-header text-3xl md:text-4xl tracking-tight font-semibold text-white">Projects</h2>
-            </div>
-            <a href="https://github.com/InnocentKisoka" target="_blank" class="text-sm text-slate-400 hover:text-white transition-colors">GitHub</a>
-        </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div onclick="showProjectModal(0)" class="project-card group cursor-pointer bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-2xl p-5">
-                <div class="text-xs text-slate-500 mb-2">2025</div>
-                <h3 class="font-semibold text-lg group-hover:text-white mb-1">GNN topological overfitting</h3>
-                <p class="text-sm text-slate-400">R-COV / ICML 2024 · latent ablations · PyG</p>
-            </div>
-            <div onclick="showProjectModal(1)" class="project-card group cursor-pointer bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-2xl p-5">
-                <div class="text-xs text-slate-500 mb-2">2025–26</div>
-                <h3 class="font-semibold text-lg group-hover:text-white mb-1">GoldE KGE reproduction</h3>
-                <p class="text-sm text-slate-400">Orthogonal embeddings · multi-seed · transfer</p>
-            </div>
-            <div onclick="showProjectModal(2)" class="project-card group cursor-pointer bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-2xl p-5">
-                <div class="text-xs text-slate-500 mb-2">2025</div>
-                <h3 class="font-semibold text-lg group-hover:text-white mb-1">Cardiac PDE · PINN + FEM</h3>
-                <p class="text-sm text-slate-400">Physics-informed ML · scientific computing</p>
-            </div>
-            <div onclick="showProjectModal(3)" class="project-card group cursor-pointer bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-2xl p-5">
-                <div class="text-xs text-slate-500 mb-2">2025</div>
-                <h3 class="font-semibold text-lg group-hover:text-white mb-1">Parallel PDE solvers</h3>
-                <p class="text-sm text-slate-400">MPI · OpenMP · C++</p>
-            </div>
-            <div onclick="showProjectModal(4)" class="project-card group cursor-pointer bg-slate-900 border border-cyan-500/20 hover:border-cyan-500/40 rounded-2xl p-5 md:col-span-2">
-                <div class="text-xs text-emerald-400/90 mb-2">2026 · CSCS–USI</div>
-                <h3 class="font-semibold text-lg group-hover:text-white mb-1">CUDA HPC portfolio</h3>
-                <p class="text-sm text-slate-400">CUDA C++ · streams · stencils · PDE mini-app · MPI+CUDA · CuPy/Numba</p>
-            </div>
-        </div>
-    </section>
-
-<!-- Publications & Reports -->
-    <section id="publications" class="max-w-6xl mx-auto px-6 py-12 border-b border-slate-800">
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-y-4 mb-8">
-            <div>
-                <div class="uppercase text-xs tracking-[0.15em] font-semibold text-slate-500 mb-3">Writing</div>
-                <h2 class="section-header text-3xl md:text-4xl tracking-tight font-semibold text-white">Technical reports</h2>
-            </div>
-        </div>
-
-        <div class="space-y-4">
-            <!-- GoldE Report -->
-            <div class="p-6 bg-slate-900 border border-slate-800 rounded-3xl flex flex-col md:flex-row md:items-center gap-6">
-                <div class="flex-1">
-                    <div class="flex items-center gap-x-3 mb-1">
-                        <span class="font-semibold text-xl tracking-tight">Reproducing GoldE: Generalizing Knowledge Graph Embedding with Universal Orthogonal Parameterization</span>
-                        <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-400 font-medium whitespace-nowrap">2025</span>
-                    </div>
-                    <div class="text-slate-400 text-[15px]">Technical report, Advanced Topics in Machine Learning (USI). Reproduction of Li et al. (ICML 2024) with additional transfer evaluation on CoDEx-S and DRKG.</div>
-                    <div class="mt-3 flex flex-wrap gap-x-4 text-sm">
-                        <a href="https://github.com/InnocentKisoka/atml-golde" target="_blank" class="text-slate-300 underline decoration-slate-600 hover:text-white">Report and code</a>
-                    </div>
-                </div>
-                <div class="text-right text-sm text-slate-500 md:w-48 flex-shrink-0">
-                    Technical report<br>
-                    <span class="text-slate-400">USI · 2025</span>
-                </div>
-            </div>
-
-            <!-- GNN Replication -->
-            <div class="p-6 bg-slate-900 border border-slate-800 rounded-3xl flex flex-col md:flex-row md:items-center gap-6">
-                <div class="flex-1">
-                    <div class="flex items-center gap-x-3 mb-1">
-                        <span class="font-semibold text-xl tracking-tight">Use Graphs When They Shouldn’t: ICML 2024 Replication Study</span>
-                        <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-400 font-medium whitespace-nowrap">2024</span>
-                    </div>
-                    <div class="text-slate-400 text-[15px]">Replication and analysis of R-COV for topological overfitting in attention-based GNNs. Implemented in PyTorch Geometric.</div>
-                    <div class="mt-3 flex flex-wrap gap-x-4 text-sm">
-                        <a href="https://github.com/InnocentKisoka/Graph-Neural-Networks---r-cov-gnn-replication-topological-overfitting" target="_blank" class="text-slate-300 underline decoration-slate-600 hover:text-white">Code and analysis</a>
-                    </div>
-                </div>
-                <div class="text-right text-sm text-slate-500 md:w-48 flex-shrink-0">
-                    Paper reproduction<br>
-                    <span class="text-slate-400">2024–2025</span>
-                </div>
-            </div>
-
-
-        </div>
-    </section>
-
-    <!-- Education -->
-    <section id="experience" class="bg-slate-900 border-y border-slate-800 py-14">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="mb-12">
-                <div class="uppercase text-xs tracking-[0.15em] font-semibold text-slate-500 mb-3">Education</div>
-                <h2 class="section-header text-3xl md:text-4xl tracking-tight font-semibold text-white">Education &amp; training</h2>
-            </div>
-
-            <div class="space-y-10 max-w-4xl">
-                <!-- MSc -->
-                <div class="flex gap-8 group">
-                    <div class="w-28 flex-shrink-0 pt-1">
-                        <div class="text-sm font-semibold text-slate-300">2024 — Present</div>
-                        <div class="text-xs text-slate-500 mt-0.5">Lugano, Switzerland</div>
-                    </div>
-                    <div class="flex-1 border-l border-slate-700 pl-8 relative">
-                        <div class="absolute -left-[7px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-700 border-2 border-slate-900 timeline-dot"></div>
-                        <div class="font-semibold text-xl tracking-tight mb-1">MSc Artificial Intelligence</div>
-                        <div class="text-cyan-400 font-medium mb-1">Università della Svizzera italiana (USI)</div>
-                        <div class="text-sm text-slate-400 mb-3">Lugano, Switzerland</div>
-                        <p class="text-slate-400 leading-relaxed">Thesis: Extending Creative Preference Optimization (CRPO) to Swahili — preference optimisation of latent representations for controllability and generalisation in low-resource language models.</p>
-                        <div class="mt-4 flex flex-wrap gap-x-2 text-xs text-slate-400">
-                            <span class="px-2.5 py-1 bg-slate-950 rounded-md border border-slate-800">Representation Learning</span>
-                            <span class="px-2.5 py-1 bg-slate-950 rounded-md border border-slate-800">Graph Neural Networks</span>
-                            <span class="px-2.5 py-1 bg-slate-950 rounded-md border border-slate-800">LLM Alignment</span>
-                            <span class="px-2.5 py-1 bg-slate-950 rounded-md border border-slate-800">Scientific ML</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CSCS Summer School -->
-                <div class="flex gap-8 group">
-                    <div class="w-28 flex-shrink-0 pt-1">
-                        <div class="text-sm font-semibold text-slate-300">Jul 2026</div>
-                        <div class="text-xs text-slate-500 mt-0.5">CSCS / USI</div>
-                    </div>
-                    <div class="flex-1 border-l border-slate-700 pl-8 relative">
-                        <div class="absolute -left-[7px] top-1.5 w-3.5 h-3.5 rounded-full bg-cyan-500 border-2 border-slate-900 timeline-dot"></div>
-                        <div class="font-semibold text-xl tracking-tight mb-1">CSCS–USI Summer School 2026</div>
-                        <div class="text-cyan-400 font-medium mb-1">Effective High-Performance Computing &amp; Data Analytics</div>
-                        <div class="text-sm text-slate-400 mb-3">Swiss National Supercomputing Centre (CSCS), Switzerland · with USI</div>
-                        <p class="text-slate-400 leading-relaxed">
-                            CUDA C++, GPU architectures, GPU Python (CuPy/Numba), scientific libraries.
-                            Trained with industrial experts including from NVIDIA; industry keynotes and CSCS visit.
+    <main class="pt-14">
+        <!-- Header / identity -->
+        <header class="border-b border-slate-800/80">
+            <div class="max-w-3xl mx-auto px-5 sm:px-6 py-14 sm:py-16">
+                <div class="flex flex-col sm:flex-row sm:items-start gap-8 sm:gap-10">
+                    <img src="profile.jpg" alt="Portrait of Innocent Kisoka"
+                         class="w-28 h-28 sm:w-32 sm:h-32 rounded-full object-cover object-top border border-slate-700 shrink-0 grayscale-[15%]">
+                    <div class="min-w-0">
+                        <h1 class="font-serif-display text-3xl sm:text-[2.15rem] text-slate-50 tracking-tight font-semibold leading-tight">
+                            Innocent Kisoka
+                        </h1>
+                        <p class="mt-2 text-base text-slate-300 font-medium">
+                            MSc candidate in Artificial Intelligence
                         </p>
-                        <div class="mt-4 flex flex-wrap gap-x-2 gap-y-2 text-xs text-slate-400">
-                            <span class="px-2.5 py-1 bg-slate-950 rounded-md border border-slate-800">CUDA C++</span>
-                            <span class="px-2.5 py-1 bg-slate-950 rounded-md border border-slate-800">GPU Architectures</span>
-                            <span class="px-2.5 py-1 bg-slate-950 rounded-md border border-slate-800">CuPy / Numba / JAX</span>
-                            <span class="px-2.5 py-1 bg-slate-950 rounded-md border border-slate-800">MPI + CUDA</span>
-                            <span class="px-2.5 py-1 bg-slate-950 rounded-md border border-slate-800">cuBLAS</span>
-                            <span class="px-2.5 py-1 bg-slate-950 rounded-md border border-slate-800">NVIDIA</span>
+                        <p class="mt-1 text-sm text-slate-500">
+                            Università della Svizzera italiana (USI) · Lugano, Switzerland
+                        </p>
+                        <p class="mt-5 text-[15px] leading-relaxed text-slate-400 max-w-xl">
+                            Research on large language models, preference optimization, and representation learning,
+                            with additional training in high-performance GPU computing at the Swiss National Supercomputing Centre (CSCS).
+                        </p>
+                        <p class="mt-4 text-sm text-slate-500">
+                            <a href="mailto:kisoki@usi.ch" class="text-slate-300 hover:text-white">kisoki@usi.ch</a>
+                            <span class="mx-2 text-slate-700">·</span>
+                            <a href="https://github.com/InnocentKisoka" target="_blank" rel="noopener" class="hover:text-slate-300">GitHub</a>
+                            <span class="mx-2 text-slate-700">·</span>
+                            <a href="https://innocentkisoka.github.io" class="hover:text-slate-300">Website</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- About -->
+        <section id="about" class="border-b border-slate-800/80">
+            <div class="max-w-3xl mx-auto px-5 sm:px-6 py-12">
+                <h2 class="text-xs font-semibold tracking-[0.14em] uppercase text-slate-500 mb-4">About</h2>
+                <div class="space-y-4 text-[15px] leading-relaxed text-slate-400">
+                    <p>
+                        I am a Master’s student in Artificial Intelligence at Università della Svizzera italiana.
+                        My work concerns how training objectives shape model representations, with a focus on
+                        preference-based training of language models and controlled analysis of learned latents.
+                    </p>
+                    <p>
+                        I also work on GPU systems and parallel computing. In 2026 I completed the CSCS–USI Summer School
+                        on Effective High-Performance Computing and Data Analytics at the
+                        <span class="text-slate-300">Swiss National Supercomputing Centre (CSCS)</span>, Switzerland,
+                        with instruction from industrial practitioners including experts from NVIDIA.
+                        Practical experience includes CUDA C++, multi-GPU workflows, GPU-accelerated Python, and MPI with CUDA.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research interests -->
+        <section id="research" class="border-b border-slate-800/80">
+            <div class="max-w-3xl mx-auto px-5 sm:px-6 py-12">
+                <h2 class="text-xs font-semibold tracking-[0.14em] uppercase text-slate-500 mb-4">Research interests</h2>
+                <ul class="space-y-3 text-[15px] text-slate-400">
+                    <li class="flex gap-3">
+                        <span class="text-slate-600 select-none">—</span>
+                        <span><span class="text-slate-200 font-medium">Large language models</span> — preference optimization, controllable generation, low-resource settings</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-slate-600 select-none">—</span>
+                        <span><span class="text-slate-200 font-medium">Representation learning</span> — graph neural networks, knowledge graph embeddings, latent analysis</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-slate-600 select-none">—</span>
+                        <span><span class="text-slate-200 font-medium">High-performance computing</span> — CUDA, multi-GPU systems, parallel scientific computing</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skills as structured lists -->
+        <section id="skills" class="border-b border-slate-800/80">
+            <div class="max-w-3xl mx-auto px-5 sm:px-6 py-12">
+                <h2 class="text-xs font-semibold tracking-[0.14em] uppercase text-slate-500 mb-6">Technical skills</h2>
+                <dl class="space-y-4 text-[15px]">
+                    <div class="grid sm:grid-cols-4 gap-1 sm:gap-4">
+                        <dt class="text-slate-500 font-medium sm:pt-0.5">Machine learning</dt>
+                        <dd class="sm:col-span-3 text-slate-300">PyTorch, Transformers, LLMs, GNNs (PyTorch Geometric), knowledge graph embeddings, scientific ML (PINNs)</dd>
+                    </div>
+                    <div class="grid sm:grid-cols-4 gap-1 sm:gap-4">
+                        <dt class="text-slate-500 font-medium sm:pt-0.5">GPU computing</dt>
+                        <dd class="sm:col-span-3 text-slate-300">CUDA C++, memory management, shared memory, streams and events, cuBLAS, CuPy, Numba CUDA, multi-GPU job workflows on CSCS</dd>
+                    </div>
+                    <div class="grid sm:grid-cols-4 gap-1 sm:gap-4">
+                        <dt class="text-slate-500 font-medium sm:pt-0.5">Parallel systems</dt>
+                        <dd class="sm:col-span-3 text-slate-300">MPI, OpenMP, MPI with CUDA (domain decomposition, halo exchange), C/C++</dd>
+                    </div>
+                    <div class="grid sm:grid-cols-4 gap-1 sm:gap-4">
+                        <dt class="text-slate-500 font-medium sm:pt-0.5">Languages</dt>
+                        <dd class="sm:col-span-3 text-slate-300">Python, C/C++, Java, SQL · English (C1), Italian (working), Korean (B2), Swahili (native)</dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <!-- HPC training -->
+        <section id="hpc" class="border-b border-slate-800/80">
+            <div class="max-w-3xl mx-auto px-5 sm:px-6 py-12">
+                <h2 class="text-xs font-semibold tracking-[0.14em] uppercase text-slate-500 mb-4">Selected training</h2>
+                <div class="border border-slate-800 rounded-lg p-5 sm:p-6 bg-slate-900/40">
+                    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-2">
+                        <h3 class="text-base font-semibold text-slate-100">CSCS–USI Summer School on Effective HPC &amp; Data Analytics</h3>
+                        <span class="text-sm text-slate-500 shrink-0">July 2026</span>
+                    </div>
+                    <p class="text-sm text-slate-400 mb-3">
+                        Swiss National Supercomputing Centre (CSCS), Switzerland · with Università della Svizzera italiana
+                    </p>
+                    <p class="text-[15px] text-slate-400 leading-relaxed mb-4">
+                        Intensive programme on GPU architectures, CUDA programming, and GPU-accelerated Python,
+                        with training from industrial experts including NVIDIA, industry keynotes, and a visit to CSCS.
+                    </p>
+                    <p class="text-sm text-slate-500">
+                        Topics: CUDA C++ (kernels, memory hierarchy, performance), streams and async pipelines,
+                        cuBLAS, CuPy/Numba, MPI with CUDA.
+                        <a href="https://github.com/InnocentKisoka/cuda-hpc-portfolio" target="_blank" rel="noopener"
+                           class="text-slate-300 hover:text-white underline decoration-slate-600 underline-offset-2 ml-1">Code portfolio</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="border-b border-slate-800/80">
+            <div class="max-w-3xl mx-auto px-5 sm:px-6 py-12">
+                <div class="flex items-baseline justify-between mb-4">
+                    <h2 class="text-xs font-semibold tracking-[0.14em] uppercase text-slate-500">Selected projects</h2>
+                    <a href="https://github.com/InnocentKisoka" target="_blank" rel="noopener" class="text-sm text-slate-500 hover:text-slate-300">All repositories</a>
+                </div>
+                <div class="divide-y divide-slate-800 border border-slate-800 rounded-lg overflow-hidden">
+                    <button type="button" onclick="showProjectModal(0)" class="project-row w-full text-left px-5 py-4 flex gap-4 items-start">
+                        <span class="text-sm text-slate-500 w-16 shrink-0 pt-0.5">2025</span>
+                        <span class="min-w-0">
+                            <span class="block text-[15px] font-medium text-slate-100">Graph neural networks and topological overfitting</span>
+                            <span class="block text-sm text-slate-500 mt-0.5">ICML 2024 R-COV replication · PyTorch Geometric · latent analysis</span>
+                        </span>
+                    </button>
+                    <button type="button" onclick="showProjectModal(1)" class="project-row w-full text-left px-5 py-4 flex gap-4 items-start">
+                        <span class="text-sm text-slate-500 w-16 shrink-0 pt-0.5">2025</span>
+                        <span class="min-w-0">
+                            <span class="block text-[15px] font-medium text-slate-100">Knowledge graph embeddings (GoldE)</span>
+                            <span class="block text-sm text-slate-500 mt-0.5">ICML 2024 reproduction · multi-seed evaluation · transfer experiments</span>
+                        </span>
+                    </button>
+                    <button type="button" onclick="showProjectModal(2)" class="project-row w-full text-left px-5 py-4 flex gap-4 items-start">
+                        <span class="text-sm text-slate-500 w-16 shrink-0 pt-0.5">2025</span>
+                        <span class="min-w-0">
+                            <span class="block text-[15px] font-medium text-slate-100">Physics-informed cardiac wave models</span>
+                            <span class="block text-sm text-slate-500 mt-0.5">PINN and finite-element comparison</span>
+                        </span>
+                    </button>
+                    <button type="button" onclick="showProjectModal(3)" class="project-row w-full text-left px-5 py-4 flex gap-4 items-start">
+                        <span class="text-sm text-slate-500 w-16 shrink-0 pt-0.5">2025</span>
+                        <span class="min-w-0">
+                            <span class="block text-[15px] font-medium text-slate-100">Parallel solvers for nonlinear PDEs</span>
+                            <span class="block text-sm text-slate-500 mt-0.5">C/C++ · MPI · OpenMP</span>
+                        </span>
+                    </button>
+                    <button type="button" onclick="showProjectModal(4)" class="project-row w-full text-left px-5 py-4 flex gap-4 items-start">
+                        <span class="text-sm text-slate-500 w-16 shrink-0 pt-0.5">2026</span>
+                        <span class="min-w-0">
+                            <span class="block text-[15px] font-medium text-slate-100">CUDA and multi-GPU HPC portfolio</span>
+                            <span class="block text-sm text-slate-500 mt-0.5">CSCS summer school · kernels · async pipelines · MPI+CUDA</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reports -->
+        <section id="publications" class="border-b border-slate-800/80">
+            <div class="max-w-3xl mx-auto px-5 sm:px-6 py-12">
+                <h2 class="text-xs font-semibold tracking-[0.14em] uppercase text-slate-500 mb-4">Technical reports</h2>
+                <ol class="space-y-5 text-[15px]">
+                    <li>
+                        <p class="text-slate-200 font-medium leading-snug">
+                            Reproducing GoldE: Generalizing Knowledge Graph Embedding with Universal Orthogonal Parameterization
+                        </p>
+                        <p class="text-sm text-slate-500 mt-1">
+                            Course technical report, Advanced Topics in Machine Learning, USI, 2025.
+                            Reproduction of Li et al. (ICML 2024) with transfer evaluation on CoDEx-S and DRKG.
+                            <a href="https://github.com/InnocentKisoka/atml-golde" target="_blank" rel="noopener" class="text-slate-400 hover:text-slate-200 underline decoration-slate-700 underline-offset-2">Code</a>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="text-slate-200 font-medium leading-snug">
+                            Use Graphs When They Shouldn’t: Replication Study of Topological Overfitting in GNNs
+                        </p>
+                        <p class="text-sm text-slate-500 mt-1">
+                            Replication and analysis of R-COV (ICML 2024), implemented in PyTorch Geometric, 2024–2025.
+                            <a href="https://github.com/InnocentKisoka/Graph-Neural-Networks---r-cov-gnn-replication-topological-overfitting" target="_blank" rel="noopener" class="text-slate-400 hover:text-slate-200 underline decoration-slate-700 underline-offset-2">Code</a>
+                        </p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section id="experience" class="border-b border-slate-800/80">
+            <div class="max-w-3xl mx-auto px-5 sm:px-6 py-12">
+                <h2 class="text-xs font-semibold tracking-[0.14em] uppercase text-slate-500 mb-6">Education</h2>
+                <div class="space-y-8">
+                    <div class="grid sm:grid-cols-12 gap-2 sm:gap-4">
+                        <div class="sm:col-span-3 text-sm text-slate-500">2024 – present</div>
+                        <div class="sm:col-span-9">
+                            <p class="text-[15px] font-semibold text-slate-100">MSc Artificial Intelligence</p>
+                            <p class="text-sm text-slate-400 mt-0.5">Università della Svizzera italiana (USI), Lugano, Switzerland</p>
+                            <p class="text-sm text-slate-500 mt-2 leading-relaxed">
+                                Thesis (in progress): preference-based training of language-model representations
+                                for controllable generation in a low-resource setting (CRPO-style).
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid sm:grid-cols-12 gap-2 sm:gap-4">
+                        <div class="sm:col-span-3 text-sm text-slate-500">July 2026</div>
+                        <div class="sm:col-span-9">
+                            <p class="text-[15px] font-semibold text-slate-100">CSCS–USI Summer School</p>
+                            <p class="text-sm text-slate-400 mt-0.5">Effective High-Performance Computing and Data Analytics</p>
+                            <p class="text-sm text-slate-500 mt-2 leading-relaxed">
+                                Swiss National Supercomputing Centre (CSCS), Switzerland.
+                                CUDA, GPU architectures, GPU-accelerated Python; industrial instructors including NVIDIA.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid sm:grid-cols-12 gap-2 sm:gap-4">
+                        <div class="sm:col-span-3 text-sm text-slate-500">2020 – 2024</div>
+                        <div class="sm:col-span-9">
+                            <p class="text-[15px] font-semibold text-slate-100">BSc Computer Engineering</p>
+                            <p class="text-sm text-slate-400 mt-0.5">Kyungdong University, South Korea · Full scholarship (KDU Global–IUCEA)</p>
+                            <p class="text-sm text-slate-500 mt-2 leading-relaxed">
+                                Thesis on machine learning for email classification. Programming Excellence Award, 2022.
+                            </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- BSc -->
-                <div class="flex gap-8 group">
-                    <div class="w-28 flex-shrink-0 pt-1">
-                        <div class="text-sm font-semibold text-slate-300">2020 — 2024</div>
-                        <div class="text-xs text-slate-500 mt-0.5">Sokcho, South Korea</div>
-                    </div>
-                    <div class="flex-1 border-l border-slate-700 pl-8 relative">
-                        <div class="absolute -left-[7px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-700 border-2 border-slate-900 timeline-dot"></div>
-                        <div class="font-semibold text-xl tracking-tight mb-1">Bachelor of Computer Engineering</div>
-                        <div class="text-cyan-400 font-medium mb-1">Kyungdong University</div>
-                        <div class="text-sm text-slate-400 mb-3">Sokcho, South Korea • Full IUCEA Scholarship</div>
-                        <p class="text-slate-400 leading-relaxed">Thesis: Enhancing Email Classification through Machine Learning Algorithms. Graduated with Programming Excellence Award.</p>
-                        <div class="mt-4 flex flex-wrap gap-x-2 text-xs text-slate-400">
-                            <span class="px-2.5 py-1 bg-slate-950 rounded-md border border-slate-800">Machine Learning</span>
-                            <span class="px-2.5 py-1 bg-slate-950 rounded-md border border-slate-800">Software Engineering</span>
-                            <span class="px-2.5 py-1 bg-slate-950 rounded-md border border-slate-800">Programming Excellence Award 2022</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Achievements -->
-            <div class="mt-16 pt-10 border-t border-slate-700">
-                <div class="uppercase text-xs tracking-[0.15em] font-semibold text-slate-500 mb-6">Awards &amp; scholarships</div>
-                <div class="grid md:grid-cols-2 gap-4 text-sm">
-                    <div class="flex gap-3 p-4 bg-slate-950 border border-slate-800 rounded-2xl">
-                        <span class="font-semibold text-cyan-400">2026</span>
-                        <span class="text-slate-300">CSCS–USI Summer School — Swiss National Supercomputing Centre, Switzerland; NVIDIA industry training</span>
-                    </div>
-                    <div class="flex gap-3 p-4 bg-slate-950 border border-slate-800 rounded-2xl">
-                        <span class="font-semibold text-cyan-400">2024</span>
-                        <span class="text-slate-300">The Foundation for the Lugano Faculties of the Università della Svizzera italiana</span>
-                    </div>
-                    <div class="flex gap-3 p-4 bg-slate-950 border border-slate-800 rounded-2xl">
-                        <span class="font-semibold text-cyan-400">2022</span>
-                        <span class="text-slate-300">Programming Excellence Award — Kyungdong University</span>
-                    </div>
-                    <div class="flex gap-3 p-4 bg-slate-950 border border-slate-800 rounded-2xl">
-                        <span class="font-semibold text-cyan-400">2020</span>
-                        <span class="text-slate-300">KDU Global – IUCEA 100% Scholarship (2nd Cohort) — South Korea</span>
-                    </div>
+                <div class="mt-10 pt-8 border-t border-slate-800">
+                    <h3 class="text-xs font-semibold tracking-[0.14em] uppercase text-slate-500 mb-4">Awards and scholarships</h3>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><span class="text-slate-500 tabular-nums w-12 inline-block">2026</span> CSCS–USI Summer School, Swiss National Supercomputing Centre</li>
+                        <li><span class="text-slate-500 tabular-nums w-12 inline-block">2024</span> Scholarship, Foundation for the Lugano Faculties of USI</li>
+                        <li><span class="text-slate-500 tabular-nums w-12 inline-block">2022</span> Programming Excellence Award, Kyungdong University</li>
+                        <li><span class="text-slate-500 tabular-nums w-12 inline-block">2020</span> KDU Global–IUCEA full scholarship</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact -->
-    <section id="contact" class="max-w-4xl mx-auto px-6 py-14">
-        <div class="text-center mb-12">
-            <div class="uppercase text-xs tracking-[0.15em] font-semibold text-slate-500 mb-3">Contact</div>
-            <h2 class="section-header text-3xl md:text-4xl tracking-tight font-semibold mb-3 text-white">Get in touch</h2>
-            <p class="text-base text-slate-400">Available for PhD, research, and industry opportunities.</p>
-        </div>
+        <!-- Contact -->
+        <section id="contact">
+            <div class="max-w-3xl mx-auto px-5 sm:px-6 py-12">
+                <h2 class="text-xs font-semibold tracking-[0.14em] uppercase text-slate-500 mb-4">Contact</h2>
+                <p class="text-[15px] text-slate-400 mb-6 max-w-xl leading-relaxed">
+                    I am available for doctoral studies and research or industry positions in machine learning and GPU systems.
+                    Please write to
+                    <a href="mailto:kisoki@usi.ch" class="text-slate-200 hover:text-white underline decoration-slate-600 underline-offset-2">kisoki@usi.ch</a>
+                    or use the form below.
+                </p>
 
-        <div class="grid md:grid-cols-5 gap-6">
-            <!-- Contact Info -->
-            <div class="md:col-span-2 space-y-5">
-                <div class="p-6 bg-slate-900 border border-slate-800 rounded-3xl">
-                    <div class="text-sm text-slate-400 mb-1.5">Email</div>
-                    <a href="mailto:kisoki@usi.ch" class="text-xl font-medium hover:text-cyan-400 transition-colors">kisoki@usi.ch</a>
-                </div>
-                
-                <div class="p-6 bg-slate-900 border border-slate-800 rounded-3xl">
-                    <div class="text-sm text-slate-400 mb-3">Elsewhere</div>
-                    <div class="space-y-3">
-                        <a href="https://github.com/InnocentKisoka" target="_blank" class="flex items-center gap-x-3 text-slate-300 hover:text-white group">
-                            <i class="fa-brands fa-github w-5"></i> 
-                            <span class="group-hover:underline">github.com/InnocentKisoka</span>
-                        </a>
-                        <a href="https://www.usi.ch" target="_blank" class="flex items-center gap-x-3 text-slate-300 hover:text-white group">
-                            <i class="fa-solid fa-university w-5"></i> 
-                            <span class="group-hover:underline">USI Lugano, Switzerland</span>
-                        </a>
-                        <a href="https://innocentkisoka.github.io" target="_blank" class="flex items-center gap-x-3 text-slate-300 hover:text-white group">
-                            <i class="fa-solid fa-globe w-5"></i> 
-                            <span class="group-hover:underline">innocentkisoka.github.io</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Contact Form -->
-            <div class="md:col-span-3 bg-slate-900 border border-slate-800 rounded-3xl p-8">
-                <form action="https://formsubmit.co/kisoki@usi.ch" method="POST">
-                    <!-- 
-                      Form submissions are sent via FormSubmit.co to kisoki@usi.ch
-                      (which will forward to innocentkisoka@yahoo.com once Cloudflare Email Routing is configured)
-                    -->
-                    <!-- Honeypot anti-spam -->
-                    <input type="text" name="_honey" style="display:none">
+                <form action="https://formsubmit.co/kisoki@usi.ch" method="POST" class="max-w-xl space-y-4">
+                    <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off">
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="New message from portfolio - Innocent Kisoka">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <input type="hidden" name="_subject" value="Portfolio enquiry — Innocent Kisoka">
+                    <div class="grid sm:grid-cols-2 gap-4">
                         <div>
-                            <label class="text-sm text-slate-400 block mb-2">Name</label>
-                            <input type="text" name="name" required 
-                                   class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm placeholder:text-slate-600 focus:border-cyan-500 focus:outline-none transition-colors">
+                            <label for="name" class="block text-sm text-slate-500 mb-1.5">Name</label>
+                            <input id="name" type="text" name="name" required
+                                   class="w-full bg-slate-900 border border-slate-700 rounded-md px-3 py-2.5 text-sm text-slate-200 placeholder:text-slate-600 focus:border-slate-500 focus:outline-none">
                         </div>
                         <div>
-                            <label class="text-sm text-slate-400 block mb-2">Email</label>
-                            <input type="email" name="email" required 
-                                   class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 text-sm placeholder:text-slate-600 focus:border-cyan-500 focus:outline-none transition-colors">
+                            <label for="email" class="block text-sm text-slate-500 mb-1.5">Email</label>
+                            <input id="email" type="email" name="email" required
+                                   class="w-full bg-slate-900 border border-slate-700 rounded-md px-3 py-2.5 text-sm text-slate-200 placeholder:text-slate-600 focus:border-slate-500 focus:outline-none">
                         </div>
                     </div>
-                    
-                    <div class="mt-5">
-                        <label class="text-sm text-slate-400 block mb-2">Message</label>
-                        <textarea name="message" rows="5" required placeholder="Tell me about research opportunities, collaborations, or your project..."
-                                  class="w-full resize-y bg-slate-950 border border-slate-700 rounded-2xl px-4 py-3 text-sm placeholder:text-slate-600 focus:border-cyan-500 focus:outline-none transition-colors"></textarea>
+                    <div>
+                        <label for="message" class="block text-sm text-slate-500 mb-1.5">Message</label>
+                        <textarea id="message" name="message" rows="4" required
+                                  class="w-full bg-slate-900 border border-slate-700 rounded-md px-3 py-2.5 text-sm text-slate-200 placeholder:text-slate-600 focus:border-slate-500 focus:outline-none resize-y"></textarea>
                     </div>
-
-                    <button type="submit" 
-                            class="mt-6 w-full h-14 bg-white hover:bg-slate-100 active:bg-slate-200 transition-all font-semibold text-slate-950 rounded-2xl flex items-center justify-center gap-x-2">
-                        <span>Send message</span>
-                        <i class="fa-solid fa-paper-plane ml-1"></i>
+                    <button type="submit"
+                            class="inline-flex items-center justify-center h-10 px-5 rounded-md bg-slate-100 text-slate-900 text-sm font-medium hover:bg-white transition-colors">
+                        Send message
                     </button>
                 </form>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-slate-800 py-8 text-center text-xs text-slate-500">
-        <div class="max-w-6xl mx-auto px-6">
-            © <span id="current-year"></span> Innocent Kisoka · Lugano, Switzerland · MSc AI, USI
+    <footer class="border-t border-slate-800/80 py-8">
+        <div class="max-w-3xl mx-auto px-5 sm:px-6 text-xs text-slate-600 flex flex-col sm:flex-row sm:justify-between gap-2">
+            <span>© <span id="current-year"></span> Innocent Kisoka</span>
+            <span>Lugano, Switzerland · MSc Artificial Intelligence, USI</span>
         </div>
     </footer>
 
-    <!-- Project Modal -->
-    <div id="project-modal" onclick="hideProjectModal()" class="hidden fixed inset-0 z-[60] bg-black/80 backdrop-blur-sm flex items-center justify-center p-6">
-        <div onclick="event.stopImmediatePropagation()" class="modal bg-slate-900 border border-slate-700 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
-            <div class="p-8 md:p-10">
-                <!-- Modal Header -->
-                <div class="flex justify-between items-start mb-6">
-                    <div id="modal-icon" class="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl"></div>
-                    <button onclick="hideProjectModal()" class="text-slate-400 hover:text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-slate-800">
-                        <i class="fa-solid fa-times text-xl"></i>
+    <!-- Project detail modal -->
+    <div id="project-modal" onclick="hideProjectModal()" class="hidden fixed inset-0 z-[60] bg-black/70 flex items-center justify-center p-4">
+        <div onclick="event.stopPropagation()" class="modal bg-slate-900 border border-slate-700 rounded-lg max-w-lg w-full max-h-[85vh] overflow-y-auto shadow-2xl">
+            <div class="p-6 sm:p-7">
+                <div class="flex justify-between items-start gap-4 mb-4">
+                    <div>
+                        <p id="modal-year" class="text-xs text-slate-500 mb-1"></p>
+                        <h3 id="modal-title" class="text-lg font-semibold text-slate-100 leading-snug"></h3>
+                    </div>
+                    <button type="button" onclick="hideProjectModal()" class="text-slate-500 hover:text-slate-200 p-1" aria-label="Close">
+                        <i class="fa-solid fa-xmark"></i>
                     </button>
                 </div>
-
-                <div class="flex items-center gap-x-3 mb-2">
-                    <h3 id="modal-title" class="text-3xl font-semibold tracking-tight"></h3>
-                    <span id="modal-year" class="text-sm px-3 py-1 rounded-full bg-slate-800 text-slate-400 font-medium"></span>
+                <p id="modal-description" class="text-sm text-slate-400 leading-relaxed"></p>
+                <div class="mt-5">
+                    <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Technologies</p>
+                    <div id="modal-tech" class="flex flex-wrap gap-1.5"></div>
                 </div>
-
-                <p id="modal-description" class="text-lg text-slate-300 leading-relaxed"></p>
-
-                <div class="mt-8">
-                    <div class="uppercase text-xs tracking-widest text-slate-400 mb-3">TECHNOLOGIES</div>
-                    <div id="modal-tech" class="flex flex-wrap gap-2"></div>
+                <div class="mt-5">
+                    <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-2">Contributions</p>
+                    <ul id="modal-contributions" class="space-y-1.5 text-sm text-slate-400 list-disc list-inside"></ul>
                 </div>
-
-                <div class="mt-8">
-                    <div class="uppercase text-xs tracking-widest text-slate-400 mb-3">KEY CONTRIBUTIONS</div>
-                    <ul id="modal-contributions" class="space-y-2 text-slate-300"></ul>
-                </div>
-
-                <div class="mt-10 pt-8 border-t border-slate-800 flex flex-col sm:flex-row gap-3">
-                    <a id="modal-live" href="#" target="_blank"
-                       class="flex-1 inline-flex justify-center items-center gap-x-2 h-12 px-8 rounded-2xl bg-white text-slate-950 font-semibold hover:bg-slate-100 transition-colors">
-                        <span>View on GitHub</span>
-                        <i class="fa-solid fa-external-link-alt text-sm"></i>
-                    </a>
-                    <a id="modal-github" href="#" target="_blank"
-                       class="flex-1 inline-flex justify-center items-center gap-x-2 h-12 px-8 rounded-2xl border border-slate-700 hover:bg-slate-800 transition-colors font-medium">
-                        <i class="fa-brands fa-github mr-1"></i>
-                        <span>View source</span>
+                <div class="mt-6 pt-5 border-t border-slate-800">
+                    <a id="modal-github" href="#" target="_blank" rel="noopener"
+                       class="inline-flex text-sm font-medium text-slate-200 hover:text-white underline decoration-slate-600 underline-offset-2">
+                        View repository
                     </a>
                 </div>
             </div>
@@ -725,274 +388,131 @@
     </div>
 
     <script>
-        // Tailwind script config
-        function initTailwind() {
-            document.documentElement.style.setProperty('--accent', '#22d3ee');
-        }
-
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            const icon = document.getElementById('menu-icon');
-            
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                menu.classList.add('hidden');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+        // Project data
+        const projects = [
+            {
+                id: 0,
+                title: 'Graph neural networks and topological overfitting',
+                year: '2025',
+                description: 'ICML 2024 R-COV replication.',
+                longDescription: 'Replication of topological overfitting analyses in attention-based message-passing GNNs, including weight-ratio dynamics, PCA of latent representations, and controlled attention and edge-feature interventions (PyTorch Geometric).',
+                tech: ['PyTorch Geometric', 'GNNs', 'Ablations'],
+                contributions: [
+                    'Reproduced R-COV topological overfitting experiments',
+                    'Latent analysis via weight dynamics and PCA',
+                    'Controlled attention and edge interventions'
+                ],
+                githubUrl: 'https://github.com/InnocentKisoka/Graph-Neural-Networks---r-cov-gnn-replication-topological-overfitting'
+            },
+            {
+                id: 1,
+                title: 'Knowledge graph embeddings (GoldE)',
+                year: '2025–26',
+                description: 'Orthogonal KGE reproduction and transfer evaluation.',
+                longDescription: 'Reproduction of GoldE (ICML 2024) with multi-seed evaluation and transfer experiments on CoDEx-S and DRKG against PyKEEN baselines.',
+                tech: ['PyKEEN', 'Knowledge graph embeddings', 'PyTorch'],
+                contributions: [
+                    'Reproduced main GoldE benchmark results',
+                    'Transfer evaluation on CoDEx-S and DRKG',
+                    'Multi-seed experimental protocol'
+                ],
+                githubUrl: 'https://github.com/InnocentKisoka/atml-golde'
+            },
+            {
+                id: 2,
+                title: 'Physics-informed cardiac wave models',
+                year: '2025',
+                description: 'PINN and FEM for anisotropic diffusion–reaction PDEs.',
+                longDescription: 'Mesh-free physics-informed neural network for anisotropic diffusion–reaction PDEs, benchmarked against classical IMEX finite-element methods.',
+                tech: ['PINNs', 'Scientific machine learning', 'PyTorch'],
+                contributions: [
+                    'PINN formulation for cardiac wave propagation',
+                    'Comparison with FEM baseline'
+                ],
+                githubUrl: 'https://github.com/InnocentKisoka'
+            },
+            {
+                id: 3,
+                title: 'Parallel solvers for nonlinear PDEs',
+                year: '2025',
+                description: 'MPI and OpenMP large-scale solvers.',
+                longDescription: 'Parallel nonlinear PDE solvers implemented in C/C++ with MPI and OpenMP for large-scale scientific simulation workflows.',
+                tech: ['MPI', 'OpenMP', 'C++'],
+                contributions: [
+                    'MPI and OpenMP parallel solvers',
+                    'Scaling and domain-decomposition practice'
+                ],
+                githubUrl: 'https://github.com/InnocentKisoka'
+            },
+            {
+                id: 4,
+                title: 'CUDA and multi-GPU HPC portfolio',
+                year: '2026',
+                description: 'CSCS–USI Summer School projects.',
+                longDescription: 'CUDA work from the CSCS–USI Summer School 2026 at the Swiss National Supercomputing Centre, with industrial instruction including NVIDIA: custom kernels, memory models, cuBLAS, shared-memory stencils, asynchronous multi-stream pipelines, a GPU PDE mini-application, and MPI with CUDA domain decomposition; also CuPy, Numba CUDA, and related GPU Python tooling.',
+                tech: ['CUDA C++', 'cuBLAS', 'Streams and events', 'MPI + CUDA', 'CuPy', 'Numba'],
+                contributions: [
+                    'CUDA kernels and host/device memory management',
+                    'Shared-memory stencils and 2D launches',
+                    'Asynchronous transfer–compute pipelines',
+                    'MPI with CUDA and halo exchange',
+                    'GPU-accelerated Python (CuPy, Numba)'
+                ],
+                githubUrl: 'https://github.com/InnocentKisoka/cuda-hpc-portfolio'
             }
-        }
+        ];
 
-        // Smooth scroll for anchor links
-        function initSmoothScroll() {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        e.preventDefault();
-                        const navHeight = 64;
-                        const elementPosition = target.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - navHeight;
-                        
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-        }
-
-        // Set current year
-        function setCurrentYear() {
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-        }
-
-        // Download CV
         function downloadResume() {
             const link = document.createElement('a');
-            link.href = './InnocentKisokaCV.pdf';
+            link.href = 'InnocentKisokaCV.pdf';
             link.download = 'Innocent_Kisoka_CV.pdf';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
         }
 
-        // Project data
-        const projects = [
-            {
-                id: 0,
-                icon: '<i class="fa-solid fa-project-diagram text-white"></i>',
-                iconBg: 'bg-gradient-to-br from-violet-500 to-indigo-500',
-                title: 'GNN topological overfitting (R-COV)',
-                year: '2025',
-                description: 'ICML 2024 R-COV replication.',
-                longDescription: 'Replication of topological overfitting in attention MP-GNNs: weight dynamics, PCA of latents, controlled attention/edge ablations (PyTorch Geometric).',
-                tech: ['PyTorch Geometric', 'GNNs', 'Ablations'],
-                contributions: ['R-COV replication', 'Latent analysis (PCA, weight dynamics)', 'Controlled ablations'],
-                liveUrl: 'https://github.com/InnocentKisoka',
-                githubUrl: 'https://github.com/InnocentKisoka'
-            },
-            {
-                id: 1,
-                icon: '<i class="fa-solid fa-diagram-project text-white"></i>',
-                iconBg: 'bg-gradient-to-br from-indigo-500 to-violet-500',
-                title: 'GoldE KGE reproduction',
-                year: '2025–26',
-                description: 'Orthogonal KGE reproduction + transfer eval.',
-                longDescription: 'Reproduced GoldE and evaluated transfer on CoDEx-S and DRKG with multi-seed PyKEEN baselines.',
-                tech: ['PyKEEN', 'KGE', 'PyTorch'],
-                contributions: ['Main benchmark reproduction', 'Transfer on CoDEx-S / DRKG', 'Multi-seed evaluation'],
-                liveUrl: 'https://github.com/InnocentKisoka/atml-golde',
-                githubUrl: 'https://github.com/InnocentKisoka/atml-golde'
-            },
-            {
-                id: 2,
-                icon: '<i class="fa-solid fa-heart-pulse text-white"></i>',
-                iconBg: 'bg-gradient-to-br from-rose-500 to-pink-500',
-                title: 'Cardiac PDE · PINN + FEM',
-                year: '2025',
-                description: 'Physics-informed NN for cardiac wave PDEs.',
-                longDescription: 'Mesh-free PINN for anisotropic diffusion–reaction PDEs, compared to IMEX FEM.',
-                tech: ['PINNs', 'Scientific ML'],
-                contributions: ['PINN implementation', 'FEM baseline comparison'],
-                liveUrl: 'https://github.com/InnocentKisoka',
-                githubUrl: 'https://github.com/InnocentKisoka'
-            },
-            {
-                id: 3,
-                icon: '<i class="fa-solid fa-microchip text-white"></i>',
-                iconBg: 'bg-gradient-to-br from-amber-500 to-orange-500',
-                title: 'Parallel PDE solvers',
-                year: '2025',
-                description: 'MPI/OpenMP large-scale solvers.',
-                longDescription: 'Parallel nonlinear PDE solvers in C/C++ with MPI and OpenMP.',
-                tech: ['MPI', 'OpenMP', 'C++'],
-                contributions: ['MPI/OpenMP solvers', 'Scaling workflows'],
-                liveUrl: 'https://github.com/InnocentKisoka',
-                githubUrl: 'https://github.com/InnocentKisoka'
-            },
-            {
-                id: 4,
-                icon: '<i class="fa-solid fa-server text-white"></i>',
-                iconBg: 'bg-gradient-to-br from-green-500 to-emerald-600',
-                title: 'CUDA HPC portfolio',
-                year: '2026',
-                description: 'CSCS–USI Summer School CUDA projects.',
-                longDescription: 'CUDA from CSCS–USI Summer School 2026 at the Swiss National Supercomputing Centre in Switzerland, with training from industrial experts including from NVIDIA: custom kernels, memory models, cuBLAS, shared-memory stencils, async streams/events, GPU PDE mini-app, MPI+CUDA domain decomposition; CuPy, Numba CUDA, JAX concepts.',
-                tech: ['CUDA C++', 'cuBLAS', 'Streams', 'MPI+CUDA', 'CuPy', 'Numba'],
-                contributions: [
-                    'CUDA kernels, memory, cuBLAS',
-                    'Shared-memory stencils',
-                    'Async multi-stream pipelines',
-                    'MPI + CUDA halo exchange',
-                    'GPU Python (CuPy, Numba)'
-                ],
-                liveUrl: 'https://github.com/InnocentKisoka/cuda-hpc-portfolio',
-                githubUrl: 'https://github.com/InnocentKisoka/cuda-hpc-portfolio'
-            }
-        ];
-
-        // Show project modal
         function showProjectModal(projectIndex) {
             const project = projects[projectIndex];
             const modal = document.getElementById('project-modal');
-
-            // Populate content
-            document.getElementById('modal-icon').innerHTML = project.icon;
-            document.getElementById('modal-icon').className = `w-14 h-14 rounded-2xl flex items-center justify-center text-3xl ${project.iconBg}`;
-            
             document.getElementById('modal-title').textContent = project.title;
             document.getElementById('modal-year').textContent = project.year;
             document.getElementById('modal-description').textContent = project.longDescription || project.description;
-
-            // Tech tags
-            const techContainer = document.getElementById('modal-tech');
-            techContainer.innerHTML = project.tech.map(t => 
-                `<span class="px-4 py-1.5 bg-slate-800 text-sm rounded-2xl text-slate-300">${t}</span>`
+            document.getElementById('modal-tech').innerHTML = project.tech.map(t =>
+                `<span class="px-2 py-0.5 bg-slate-800 text-xs rounded text-slate-300">${t}</span>`
             ).join('');
-
-            // Contributions
-            const contribContainer = document.getElementById('modal-contributions');
-            contribContainer.innerHTML = project.contributions.map(c => 
-                `<li class="flex gap-x-3"><span class="mt-2 block w-1 h-1 rounded-full bg-cyan-400 flex-shrink-0"></span><span>${c}</span></li>`
+            document.getElementById('modal-contributions').innerHTML = project.contributions.map(c =>
+                `<li>${c}</li>`
             ).join('');
-
-            // Links
-            const liveLink = document.getElementById('modal-live');
-            const githubLink = document.getElementById('modal-github');
-            
-            liveLink.href = project.liveUrl;
-            githubLink.href = project.githubUrl;
-
-            // Show modal
+            const gh = document.getElementById('modal-github');
+            gh.href = project.githubUrl || 'https://github.com/InnocentKisoka';
             modal.classList.remove('hidden');
-            modal.classList.add('flex');
             document.body.style.overflow = 'hidden';
         }
 
         function hideProjectModal() {
-            const modal = document.getElementById('project-modal');
-            modal.classList.remove('flex');
-            modal.classList.add('hidden');
+            document.getElementById('project-modal').classList.add('hidden');
             document.body.style.overflow = '';
         }
 
-        // Contact form uses FormSubmit.co for real submissions (static site)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') hideProjectModal();
+        });
 
-        // Keyboard escape to close modal
-        function initKeyboardControls() {
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    const modal = document.getElementById('project-modal');
-                    if (!modal.classList.contains('hidden')) {
-                        hideProjectModal();
-                    } else {
-                        const mobileMenu = document.getElementById('mobile-menu');
-                        if (!mobileMenu.classList.contains('hidden')) {
-                            toggleMobileMenu();
-                        }
-                    }
-                }
-                
-                // '/' focuses search or highlights projects (fun easter egg)
-                if (e.key === '/' && document.activeElement.tagName === 'BODY') {
-                    e.preventDefault();
-                    const projectsSection = document.getElementById('projects');
-                    projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Active section highlight
+        const sectionIds = ['about', 'research', 'experience', 'contact'];
+        const navLinks = document.querySelectorAll('nav a.nav-link');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sectionIds.forEach(id => {
+                const el = document.getElementById(id);
+                if (el && window.scrollY >= el.offsetTop - 120) current = id;
             });
-
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', function(e) {
-                const mobileMenu = document.getElementById('mobile-menu');
-                const menuBtn = document.getElementById('mobile-menu-btn');
-                
-                if (!mobileMenu.classList.contains('hidden') && 
-                    !mobileMenu.contains(e.target) && 
-                    !menuBtn.contains(e.target)) {
-                    toggleMobileMenu();
-                }
+            navLinks.forEach(link => {
+                link.classList.toggle('nav-active', link.getAttribute('href') === `#${current}`);
             });
-        }
-
-        // Initialize everything
-        function init() {
-            initTailwind();
-            initSmoothScroll();
-            setCurrentYear();
-            initKeyboardControls();
-
-            // Bonus: subtle active nav highlight on scroll
-            const sections = ['about', 'skills', 'hpc', 'projects', 'experience', 'contact'];
-            const navLinks = document.querySelectorAll('nav a[href^="#"]');
-
-            window.addEventListener('scroll', () => {
-                let current = '';
-                
-                sections.forEach(sectionId => {
-                    const section = document.getElementById(sectionId);
-                    if (section) {
-                        const sectionTop = section.offsetTop;
-                        if (scrollY >= sectionTop - 200) {
-                            current = sectionId;
-                        }
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('nav-active');
-                    if (link.getAttribute('href') === `#${current}`) {
-                        link.classList.add('nav-active');
-                    }
-                });
-            }, { passive: true });
-
-            // Easter egg: Konami code for fun
-            let konami = [];
-            const code = [38,38,40,40,37,39,37,39,66,65]; // ↑↑↓↓←→←→BA
-            document.addEventListener('keydown', function(e) {
-                konami.push(e.keyCode);
-                if (konami.length > 10) konami.shift();
-                if (konami.join() === code.join()) {
-                    document.body.style.transition = 'filter 1.5s';
-                    document.body.style.filter = 'hue-rotate(180deg)';
-                    setTimeout(() => {
-                        document.body.style.filter = '';
-                    }, 2200);
-                    konami = [];
-                }
-            });
-
-            // Log ready message (for developers inspecting)
-            console.log('%c[Portfolio] Innocent Kisoka\'s portfolio initialized. Press "/" to jump to projects.', 'color:#475569;font-size:10px');
-        }
-
-        // Boot app
-        window.onload = init;
+        }, { passive: true });
     </script>
 </body>
 </html>
