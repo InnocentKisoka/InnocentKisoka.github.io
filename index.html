@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Innocent Kisoka — AI Researcher | MSc Artificial Intelligence</title>
+    <title>Innocent Kisoka · MSc Artificial Intelligence · USI</title>
+    <meta name="description" content="Innocent Kisoka — MSc Artificial Intelligence at Università della Svizzera italiana. Research in LLMs, representation learning, and GPU/HPC systems (CSCS).">
+    <meta name="author" content="Innocent Kisoka">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
         
         :root {
             --accent: #22d3ee;
@@ -18,13 +20,14 @@
         }
         
         .font-display {
-            font-family: 'Space Grotesk', 'Inter', system_ui, sans-serif;
+            font-family: 'Inter', system-ui, sans-serif;
             font-weight: 600;
         }
 
         .section-header {
-            font-family: 'Space Grotesk', 'Inter', system_ui, sans-serif;
-            letter-spacing: -0.025em;
+            font-family: 'Inter', system-ui, sans-serif;
+            letter-spacing: -0.03em;
+            font-weight: 600;
         }
 
         .nav-link {
@@ -47,9 +50,8 @@
         }
         
         .project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-            border-color: #334155;
+            border-color: #475569;
+            background-color: #0f172a;
         }
 
         .tech-tag {
@@ -62,9 +64,8 @@
         }
         
         .skill-pill:hover {
-            background-color: #22d3ee;
-            color: #0f172a;
-            transform: translateY(-1px);
+            border-color: #475569;
+            background-color: #0f172a;
         }
 
         .accent-text {
@@ -139,7 +140,7 @@
                 <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
                     <a href="#about" class="nav-link text-slate-300 hover:text-white">About</a>
                     <a href="#interests" class="nav-link text-slate-300 hover:text-white">Interests</a>
-                    <a href="#hpc" class="nav-link text-slate-300 hover:text-white">HPC &amp; CUDA</a>
+                    <a href="#hpc" class="nav-link text-slate-300 hover:text-white">GPU systems</a>
                     <a href="#projects" class="nav-link text-slate-300 hover:text-white">Projects</a>
                     <a href="#publications" class="nav-link text-slate-300 hover:text-white">Publications</a>
                     <a href="#experience" class="nav-link text-slate-300 hover:text-white">Education</a>
@@ -155,8 +156,8 @@
                         <span>Resume</span>
                     </a>
                     <a href="#contact" 
-                       class="px-5 py-2 text-sm font-semibold bg-white text-slate-900 rounded-lg hover:bg-slate-100 transition-colors flex items-center gap-x-2">
-                        <span>Open to opportunities</span>
+                       class="px-5 py-2 text-sm font-medium bg-slate-100 text-slate-900 rounded-lg hover:bg-white transition-colors">
+                        Contact
                     </a>
                 </div>
 
@@ -174,7 +175,7 @@
             <div class="px-6 py-6 flex flex-col gap-y-4 text-sm font-medium">
                 <a href="#about" onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white py-1">About</a>
                 <a href="#interests" onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white py-1">Interests</a>
-                <a href="#hpc" onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white py-1">HPC &amp; CUDA</a>
+                <a href="#hpc" onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white py-1">GPU systems</a>
                 <a href="#projects" onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white py-1">Projects</a>
                 <a href="#publications" onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white py-1">Publications</a>
                 <a href="#experience" onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white py-1">Education</a>
@@ -187,8 +188,8 @@
                         <span>Download Resume</span>
                     </a>
                     <a href="#contact" onclick="toggleMobileMenu()"
-                       class="flex items-center justify-center gap-x-2 px-4 py-3 rounded-lg bg-white text-slate-900 text-sm font-semibold">
-                        Open to opportunities
+                       class="flex items-center justify-center gap-x-2 px-4 py-3 rounded-lg bg-slate-100 text-slate-900 text-sm font-medium">
+                        Contact
                     </a>
                 </div>
             </div>
@@ -196,7 +197,7 @@
     </nav>
 
     <!-- Hero -->
-    <header class="pt-16 min-h-[100dvh] flex items-center hero-bg relative overflow-hidden">
+    <header class="pt-16 min-h-[85vh] flex items-center hero-bg relative overflow-hidden">
         <div class="max-w-6xl mx-auto px-6 pt-12 pb-16">
             <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
                 <!-- Photo (appears first on mobile, right side on desktop) -->
@@ -205,82 +206,71 @@
                     <img 
                         src="profile.jpg" 
                         alt="Innocent Kisoka"
-                        class="w-64 h-64 md:w-80 md:h-80 rounded-3xl object-cover border-2 border-slate-700 shadow-2xl ring-1 ring-slate-800 transition-all hover:scale-[1.01] hover:border-cyan-400/40"
+                        class="w-56 h-56 md:w-72 md:h-72 rounded-2xl object-cover border border-slate-700 shadow-xl object-top"
                     >
                 </div>
 
                 <!-- Text content -->
                 <div class="order-2 md:order-1 flex-1 max-w-2xl">
                     <!-- Status -->
-                    <div class="inline-flex items-center gap-x-2 px-4 h-9 rounded-full bg-slate-900 border border-slate-800 mb-8">
-                        <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
-                        <span class="text-sm font-medium text-slate-400">MSc AI @ USI • Open to Opportunities</span>
-                    </div>
+                    <p class="text-sm font-medium text-slate-500 mb-5 tracking-wide">MSc Artificial Intelligence · Università della Svizzera italiana</p>
 
-                    <h1 class="text-6xl md:text-7xl font-display tracking-tighter leading-none mb-6">
-                        Innocent Kisoka.<br>
-                        <span class="gradient-text">AI Researcher.</span>
+                    <h1 class="text-5xl md:text-6xl font-display tracking-tight leading-[1.1] mb-5 text-white">
+                        Innocent Kisoka
                     </h1>
-
-                    <p class="max-w-lg text-xl text-slate-400 mb-10">
-                        MSc AI @ USI · LLMs, representation learning, CUDA/HPC. Open to PhD, research, and industry roles.
+                    <p class="text-lg md:text-xl text-slate-300 font-medium mb-4">
+                        Machine learning researcher · GPU systems
                     </p>
 
-                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                    <p class="max-w-xl text-base md:text-lg text-slate-400 mb-8 leading-relaxed">
+                        Preference optimization and representation learning for LLMs; CUDA/HPC at the
+                        Swiss National Supercomputing Centre (CSCS). Seeking PhD and research or industry roles.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
                         <a href="#projects" 
-                           class="group px-8 h-14 inline-flex items-center justify-center rounded-xl bg-white text-slate-950 font-semibold text-base hover:bg-slate-100 active:scale-[0.985] transition-all">
-                            View projects
-                            <i class="fa-solid fa-arrow-right ml-3 group-hover:translate-x-0.5 transition-transform"></i>
+                           class="px-6 h-11 inline-flex items-center justify-center rounded-lg bg-slate-100 text-slate-900 font-medium text-sm hover:bg-white transition-colors">
+                            Projects
                         </a>
                         <a href="#contact" 
-                           class="px-8 h-14 inline-flex items-center justify-center rounded-xl border border-slate-700 hover:bg-slate-900 font-medium transition-colors text-base">
-                            Let's talk
+                           class="px-6 h-11 inline-flex items-center justify-center rounded-lg border border-slate-700 hover:border-slate-500 font-medium transition-colors text-sm text-slate-200">
+                            Contact
+                        </a>
+                        <a href="https://github.com/InnocentKisoka" target="_blank"
+                           class="px-6 h-11 inline-flex items-center justify-center rounded-lg text-sm text-slate-400 hover:text-white transition-colors">
+                            GitHub
                         </a>
                     </div>
 
-                    <!-- Quick stats -->
-                    <div class="flex items-center gap-x-8 mt-12 md:mt-16 pt-8 border-t border-slate-800">
-                        <div>
-                            <div class="text-3xl font-semibold tracking-tighter">2</div>
-                            <div class="text-xs uppercase tracking-[1px] text-slate-500 mt-1">Degrees · AI &amp; Eng.</div>
-                        </div>
-                        <div>
-                            <div class="text-3xl font-semibold tracking-tighter">CUDA</div>
-                            <div class="text-xs uppercase tracking-[1px] text-slate-500 mt-1">HPC · CSCS · NVIDIA</div>
-                        </div>
-                        <div>
-                            <div class="text-3xl font-semibold tracking-tighter">3</div>
-                            <div class="text-xs uppercase tracking-[1px] text-slate-500 mt-1">Countries</div>
-                        </div>
+                    <div class="flex flex-wrap gap-x-6 gap-y-2 mt-10 pt-6 border-t border-slate-800 text-sm text-slate-500">
+                        <span><span class="text-slate-300 font-medium">Focus</span> · LLMs, representation learning</span>
+                        <span><span class="text-slate-300 font-medium">Systems</span> · CUDA, MPI, CSCS</span>
+                        <span><span class="text-slate-300 font-medium">Based in</span> · Lugano, Switzerland</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Subtle decorative element -->
-        <div class="absolute bottom-12 right-8 hidden xl:block">
-            <div class="text-[10px] font-mono tracking-[3px] text-slate-600 rotate-90 origin-bottom-right">SCROLL TO EXPLORE</div>
-        </div>
     </header>
 
     <!-- About -->
     <section id="about" class="max-w-6xl mx-auto px-6 pt-16 pb-12">
         <div class="grid md:grid-cols-12 gap-x-12 gap-y-8 items-start">
             <div class="md:col-span-4">
-                <div class="uppercase text-xs tracking-[2px] font-semibold text-cyan-400 mb-3">WHO I AM</div>
-                <h2 class="section-header text-4xl tracking-tighter font-semibold leading-none">About</h2>
+                <div class="uppercase text-xs tracking-[0.15em] font-semibold text-slate-500 mb-3">Profile</div>
+                <h2 class="section-header text-3xl md:text-4xl tracking-tight font-semibold leading-none text-white">About</h2>
             </div>
             <div class="md:col-span-8 text-[16px] leading-relaxed text-slate-400 space-y-4">
                 <p>
-                    MSc Artificial Intelligence at USI (Lugano). Focus: LLMs &amp; preference optimization,
-                    representation analysis (GNNs, KGE), scientific ML, and GPU systems.
+                    MSc student in Artificial Intelligence at Università della Svizzera italiana (USI), Lugano.
+                    Research interests include large language models, preference optimization, representation learning,
+                    and GPU-accelerated scientific computing.
                 </p>
                 <p>
-                    Completed the <strong class="text-slate-200">CSCS–USI Summer School 2026</strong> on Effective HPC &amp; Data Analytics
-                    at the <strong class="text-slate-200">Swiss National Supercomputing Centre (CSCS), Switzerland</strong>:
-                    CUDA C++, GPU architectures, CuPy/Numba, MPI+CUDA—with training from industrial experts including from
-                    <strong class="text-slate-200">NVIDIA</strong>.
-                    <a href="https://github.com/InnocentKisoka/cuda-hpc-portfolio" target="_blank" class="text-cyan-400 hover:text-cyan-300">cuda-hpc-portfolio</a>.
+                    Completed the CSCS–USI Summer School 2026 on Effective High-Performance Computing and Data Analytics
+                    at the Swiss National Supercomputing Centre (CSCS), Switzerland, with instruction from industrial
+                    experts including NVIDIA. Skills: CUDA C++, GPU architectures, CuPy/Numba, MPI with CUDA.
+                    <a href="https://github.com/InnocentKisoka/cuda-hpc-portfolio" target="_blank" class="text-slate-300 underline decoration-slate-600 hover:text-white hover:decoration-slate-400">CUDA portfolio</a>.
                 </p>
             </div>
         </div>
@@ -289,21 +279,21 @@
     <!-- Research Interests -->
     <section id="interests" class="max-w-6xl mx-auto px-6 py-12">
         <div class="mb-6">
-            <div class="uppercase text-xs tracking-[2px] font-semibold text-cyan-400 mb-2">FOCUS</div>
-            <h2 class="section-header text-4xl tracking-tighter font-semibold">Interests</h2>
+            <div class="uppercase text-xs tracking-[0.15em] font-semibold text-slate-500 mb-2">Research</div>
+            <h2 class="section-header text-3xl md:text-4xl tracking-tight font-semibold text-white">Areas of interest</h2>
         </div>
         <div class="grid md:grid-cols-3 gap-3">
-            <div class="p-5 bg-slate-900 border border-slate-800 rounded-2xl">
-                <div class="font-semibold mb-1 text-cyan-400">LLMs &amp; alignment</div>
-                <p class="text-slate-400 text-sm">Preference optimization, latent control, low-resource NLP.</p>
+            <div class="p-5 bg-slate-900/80 border border-slate-800 rounded-xl">
+                <div class="font-semibold mb-1 text-slate-100">Large language models</div>
+                <p class="text-slate-400 text-sm">Preference optimization, controllable generation, low-resource NLP.</p>
             </div>
-            <div class="p-5 bg-slate-900 border border-slate-800 rounded-2xl">
-                <div class="font-semibold mb-1 text-cyan-400">Representation learning</div>
-                <p class="text-slate-400 text-sm">GNN bias, KGE, probing what models encode.</p>
+            <div class="p-5 bg-slate-900/80 border border-slate-800 rounded-xl">
+                <div class="font-semibold mb-1 text-slate-100">Representation learning</div>
+                <p class="text-slate-400 text-sm">Graph neural networks, knowledge graph embeddings, latent analysis.</p>
             </div>
-            <div class="p-5 bg-slate-900 border border-slate-800 rounded-2xl">
-                <div class="font-semibold mb-1 text-cyan-400">CUDA / HPC</div>
-                <p class="text-slate-400 text-sm">GPU kernels, multi-GPU training, MPI+CUDA, CSCS.</p>
+            <div class="p-5 bg-slate-900/80 border border-slate-800 rounded-xl">
+                <div class="font-semibold mb-1 text-slate-100">High-performance computing</div>
+                <p class="text-slate-400 text-sm">CUDA, multi-GPU systems, MPI, scientific computing at CSCS.</p>
             </div>
         </div>
     </section>
@@ -313,10 +303,10 @@
         <div class="max-w-6xl mx-auto px-6">
             <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-y-4 mb-10">
                 <div>
-                    <div class="uppercase text-xs tracking-[2px] font-semibold text-cyan-400 mb-3">WHAT I WORK WITH</div>
-                    <h2 class="section-header text-4xl md:text-5xl tracking-tighter font-semibold">Skills &amp; Tools</h2>
+                    <div class="uppercase text-xs tracking-[0.15em] font-semibold text-slate-500 mb-3">Technical skills</div>
+                    <h2 class="section-header text-3xl md:text-4xl tracking-tight font-semibold text-white">Skills</h2>
                 </div>
-                <p class="max-w-xs text-slate-400 text-[15px]">ML research stack + CUDA/HPC systems.</p>
+                <p class="max-w-xs text-slate-500 text-sm">Machine learning, systems, and scientific computing.</p>
             </div>
 
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
@@ -383,21 +373,21 @@
     <section id="hpc" class="max-w-6xl mx-auto px-6 py-14">
         <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-6">
             <div>
-                <div class="uppercase text-xs tracking-[2px] font-semibold text-cyan-400 mb-2">HPC · CUDA</div>
-                <h2 class="section-header text-4xl tracking-tighter font-semibold">CSCS–USI Summer School 2026</h2>
+                <div class="uppercase text-xs tracking-[0.15em] font-semibold text-slate-500 mb-2">GPU systems</div>
+                <h2 class="section-header text-3xl md:text-4xl tracking-tight font-semibold text-white">High-performance computing</h2>
                 <p class="text-slate-400 mt-2 text-[15px]">
-                    Effective HPC &amp; Data Analytics · Swiss National Supercomputing Centre (Switzerland) · Jul 2026
+                    CSCS–USI Summer School 2026 · Effective HPC &amp; Data Analytics · July 2026
                 </p>
             </div>
             <div class="flex gap-2 text-sm">
                 <a href="https://github.com/InnocentKisoka/cuda-hpc-portfolio" target="_blank"
-                   class="px-3 py-2 rounded-xl border border-slate-700 text-slate-300 hover:text-cyan-400 hover:border-cyan-500/40 transition-colors">CUDA portfolio ↗</a>
+                   class="px-3 py-2 rounded-lg border border-slate-700 text-slate-300 hover:border-slate-500 hover:text-white transition-colors">View CUDA work</a>
             </div>
         </div>
-        <p class="text-slate-400 text-[15px] max-w-3xl mb-5">
-            Organised by the <strong class="text-slate-300">Swiss National Supercomputing Centre (CSCS)</strong> in Switzerland
-            and USI. Hands-on GPU architectures, CUDA, and GPU-accelerated Python—with instruction from
-            <strong class="text-slate-300">industrial experts, including from NVIDIA</strong>, plus industry keynotes and a CSCS site visit.
+        <p class="text-slate-400 text-[15px] max-w-3xl mb-5 leading-relaxed">
+            Training at the <strong class="text-slate-200">Swiss National Supercomputing Centre (CSCS)</strong>, Switzerland,
+            organised with Università della Svizzera italiana. Curriculum covered GPU architectures, CUDA programming,
+            and GPU-accelerated Python, with instruction from industrial experts including NVIDIA.
         </p>
         <div class="flex flex-wrap gap-2 mb-5">
             <span class="px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700 text-xs text-slate-300">CUDA C++</span>
@@ -422,35 +412,35 @@
         <section id="projects" class="max-w-6xl mx-auto px-6 py-14">
         <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
             <div>
-                <div class="uppercase text-xs tracking-[2px] font-semibold text-cyan-400 mb-2">SELECTED WORK</div>
-                <h2 class="section-header text-4xl tracking-tighter font-semibold">Projects</h2>
+                <div class="uppercase text-xs tracking-[0.15em] font-semibold text-slate-500 mb-2">Selected work</div>
+                <h2 class="section-header text-3xl md:text-4xl tracking-tight font-semibold text-white">Projects</h2>
             </div>
-            <a href="https://github.com/InnocentKisoka" target="_blank" class="text-sm text-cyan-400 hover:text-cyan-300">GitHub ↗</a>
+            <a href="https://github.com/InnocentKisoka" target="_blank" class="text-sm text-slate-400 hover:text-white transition-colors">GitHub</a>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div onclick="showProjectModal(0)" class="project-card group cursor-pointer bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-2xl p-5">
                 <div class="text-xs text-slate-500 mb-2">2025</div>
-                <h3 class="font-semibold text-lg group-hover:text-cyan-400 mb-1">GNN topological overfitting</h3>
+                <h3 class="font-semibold text-lg group-hover:text-white mb-1">GNN topological overfitting</h3>
                 <p class="text-sm text-slate-400">R-COV / ICML 2024 · latent ablations · PyG</p>
             </div>
             <div onclick="showProjectModal(1)" class="project-card group cursor-pointer bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-2xl p-5">
                 <div class="text-xs text-slate-500 mb-2">2025–26</div>
-                <h3 class="font-semibold text-lg group-hover:text-cyan-400 mb-1">GoldE KGE reproduction</h3>
+                <h3 class="font-semibold text-lg group-hover:text-white mb-1">GoldE KGE reproduction</h3>
                 <p class="text-sm text-slate-400">Orthogonal embeddings · multi-seed · transfer</p>
             </div>
             <div onclick="showProjectModal(2)" class="project-card group cursor-pointer bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-2xl p-5">
                 <div class="text-xs text-slate-500 mb-2">2025</div>
-                <h3 class="font-semibold text-lg group-hover:text-cyan-400 mb-1">Cardiac PDE · PINN + FEM</h3>
+                <h3 class="font-semibold text-lg group-hover:text-white mb-1">Cardiac PDE · PINN + FEM</h3>
                 <p class="text-sm text-slate-400">Physics-informed ML · scientific computing</p>
             </div>
             <div onclick="showProjectModal(3)" class="project-card group cursor-pointer bg-slate-900 border border-slate-800 hover:border-slate-700 rounded-2xl p-5">
                 <div class="text-xs text-slate-500 mb-2">2025</div>
-                <h3 class="font-semibold text-lg group-hover:text-cyan-400 mb-1">Parallel PDE solvers</h3>
+                <h3 class="font-semibold text-lg group-hover:text-white mb-1">Parallel PDE solvers</h3>
                 <p class="text-sm text-slate-400">MPI · OpenMP · C++</p>
             </div>
             <div onclick="showProjectModal(4)" class="project-card group cursor-pointer bg-slate-900 border border-cyan-500/20 hover:border-cyan-500/40 rounded-2xl p-5 md:col-span-2">
                 <div class="text-xs text-emerald-400/90 mb-2">2026 · CSCS–USI</div>
-                <h3 class="font-semibold text-lg group-hover:text-cyan-400 mb-1">CUDA HPC portfolio</h3>
+                <h3 class="font-semibold text-lg group-hover:text-white mb-1">CUDA HPC portfolio</h3>
                 <p class="text-sm text-slate-400">CUDA C++ · streams · stencils · PDE mini-app · MPI+CUDA · CuPy/Numba</p>
             </div>
         </div>
@@ -460,12 +450,9 @@
     <section id="publications" class="max-w-6xl mx-auto px-6 py-12 border-b border-slate-800">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-y-4 mb-8">
             <div>
-                <div class="uppercase text-xs tracking-[2px] font-semibold text-cyan-400 mb-3">OUTPUT</div>
-                <h2 class="section-header text-4xl md:text-5xl tracking-tighter font-semibold">Publications &amp; Reports</h2>
+                <div class="uppercase text-xs tracking-[0.15em] font-semibold text-slate-500 mb-3">Writing</div>
+                <h2 class="section-header text-3xl md:text-4xl tracking-tight font-semibold text-white">Technical reports</h2>
             </div>
-            <a href="https://github.com/InnocentKisoka" target="_blank" class="text-sm text-cyan-400 hover:text-cyan-300 inline-flex items-center gap-x-1.5">
-                View all on GitHub <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-            </a>
         </div>
 
         <div class="space-y-4">
@@ -476,14 +463,14 @@
                         <span class="font-semibold text-xl tracking-tight">Reproducing GoldE: Generalizing Knowledge Graph Embedding with Universal Orthogonal Parameterization</span>
                         <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-400 font-medium whitespace-nowrap">2025</span>
                     </div>
-                    <div class="text-slate-400 text-[15px]">Technical report for Advanced Topics in Machine Learning (USI). Full reproduction of Li et al. (ICML 2024) plus extensions on CoDEx-S and the large-scale biomedical DRKG dataset. Achieved new state-of-the-art results on both out-of-distribution KGs.</div>
+                    <div class="text-slate-400 text-[15px]">Technical report, Advanced Topics in Machine Learning (USI). Reproduction of Li et al. (ICML 2024) with additional transfer evaluation on CoDEx-S and DRKG.</div>
                     <div class="mt-3 flex flex-wrap gap-x-4 text-sm">
-                        <a href="https://github.com/InnocentKisoka/atml-golde" target="_blank" class="text-cyan-400 hover:underline">Report + Code →</a>
+                        <a href="https://github.com/InnocentKisoka/atml-golde" target="_blank" class="text-slate-300 underline decoration-slate-600 hover:text-white">Report and code</a>
                     </div>
                 </div>
                 <div class="text-right text-sm text-slate-500 md:w-48 flex-shrink-0">
-                    Course Technical Report<br>
-                    <span class="text-emerald-400">+144% MRR on DRKG</span>
+                    Technical report<br>
+                    <span class="text-slate-400">USI · 2025</span>
                 </div>
             </div>
 
@@ -494,20 +481,18 @@
                         <span class="font-semibold text-xl tracking-tight">Use Graphs When They Shouldn’t: ICML 2024 Replication Study</span>
                         <span class="text-xs px-3 py-1 rounded-full bg-slate-800 text-slate-400 font-medium whitespace-nowrap">2024</span>
                     </div>
-                    <div class="text-slate-400 text-[15px]">Rigorous replication and analysis of R-COV for mitigating topological overfitting in GNNs. Demonstrated implicit bias in attention-based message passing even on non-informative graphs. Implemented in PyTorch Geometric.</div>
+                    <div class="text-slate-400 text-[15px]">Replication and analysis of R-COV for topological overfitting in attention-based GNNs. Implemented in PyTorch Geometric.</div>
                     <div class="mt-3 flex flex-wrap gap-x-4 text-sm">
-                        <a href="https://github.com/InnocentKisoka/Graph-Neural-Networks---r-cov-gnn-replication-topological-overfitting" target="_blank" class="text-cyan-400 hover:underline">Code &amp; Analysis →</a>
+                        <a href="https://github.com/InnocentKisoka/Graph-Neural-Networks---r-cov-gnn-replication-topological-overfitting" target="_blank" class="text-slate-300 underline decoration-slate-600 hover:text-white">Code and analysis</a>
                     </div>
                 </div>
                 <div class="text-right text-sm text-slate-500 md:w-48 flex-shrink-0">
-                    Paper Reproduction<br>
-                    <span class="text-emerald-400">GDL 2025 Submission</span>
+                    Paper reproduction<br>
+                    <span class="text-slate-400">2024–2025</span>
                 </div>
             </div>
 
-            <div class="text-center pt-2">
-                <span class="text-sm text-slate-500">Additional technical reports and preprints in preparation for future opportunities.</span>
-            </div>
+
         </div>
     </section>
 
@@ -515,8 +500,8 @@
     <section id="experience" class="bg-slate-900 border-y border-slate-800 py-14">
         <div class="max-w-6xl mx-auto px-6">
             <div class="mb-12">
-                <div class="uppercase text-xs tracking-[2px] font-semibold text-cyan-400 mb-3">ACADEMIC BACKGROUND</div>
-                <h2 class="section-header text-4xl md:text-5xl tracking-tighter font-semibold">Education</h2>
+                <div class="uppercase text-xs tracking-[0.15em] font-semibold text-slate-500 mb-3">Education</div>
+                <h2 class="section-header text-3xl md:text-4xl tracking-tight font-semibold text-white">Education &amp; training</h2>
             </div>
 
             <div class="space-y-10 max-w-4xl">
@@ -587,24 +572,9 @@
                     </div>
                 </div>
 
-                <!-- Secondary -->
-                <div class="flex gap-8 group">
-                    <div class="w-28 flex-shrink-0 pt-1">
-                        <div class="text-sm font-semibold text-slate-300">2017 — 2019</div>
-                        <div class="text-xs text-slate-500 mt-0.5">Morogoro, Tanzania</div>
-                    </div>
-                    <div class="flex-1 border-l border-slate-700 pl-8 relative">
-                        <div class="absolute -left-[7px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-700 border-2 border-slate-900 timeline-dot"></div>
-                        <div class="font-semibold text-xl tracking-tight mb-1">Secondary Education</div>
-                        <div class="text-cyan-400 font-medium mb-3">Mzumbe Secondary School</div>
-                        <p class="text-slate-400 leading-relaxed">Completed with Academic Excellence Award. Strong foundation in mathematics and sciences.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Achievements -->
+                <!-- Achievements -->
             <div class="mt-16 pt-10 border-t border-slate-700">
-                <div class="uppercase text-xs tracking-[2px] font-semibold text-cyan-400 mb-6">SELECTED ACHIEVEMENTS &amp; GRANTS</div>
+                <div class="uppercase text-xs tracking-[0.15em] font-semibold text-slate-500 mb-6">Awards &amp; scholarships</div>
                 <div class="grid md:grid-cols-2 gap-4 text-sm">
                     <div class="flex gap-3 p-4 bg-slate-950 border border-slate-800 rounded-2xl">
                         <span class="font-semibold text-cyan-400">2026</span>
@@ -630,9 +600,9 @@
     <!-- Contact -->
     <section id="contact" class="max-w-4xl mx-auto px-6 py-14">
         <div class="text-center mb-12">
-            <div class="uppercase text-xs tracking-[2px] font-semibold text-cyan-400 mb-3">LET'S CONNECT</div>
-            <h2 class="section-header text-4xl md:text-5xl tracking-tighter font-semibold mb-4">Let's connect.</h2>
-            <p class="text-xl text-slate-400">PhD, research, and industry roles.</p>
+            <div class="uppercase text-xs tracking-[0.15em] font-semibold text-slate-500 mb-3">Contact</div>
+            <h2 class="section-header text-3xl md:text-4xl tracking-tight font-semibold mb-3 text-white">Get in touch</h2>
+            <p class="text-base text-slate-400">Available for PhD, research, and industry opportunities.</p>
         </div>
 
         <div class="grid md:grid-cols-5 gap-6">
@@ -640,7 +610,7 @@
             <div class="md:col-span-2 space-y-5">
                 <div class="p-6 bg-slate-900 border border-slate-800 rounded-3xl">
                     <div class="text-sm text-slate-400 mb-1.5">Email</div>
-                    <a href="mailto:contact@innocentkisoka.com" class="text-xl font-medium hover:text-cyan-400 transition-colors">contact@innocentkisoka.com</a>
+                    <a href="mailto:kisoki@usi.ch" class="text-xl font-medium hover:text-cyan-400 transition-colors">kisoki@usi.ch</a>
                 </div>
                 
                 <div class="p-6 bg-slate-900 border border-slate-800 rounded-3xl">
@@ -654,9 +624,9 @@
                             <i class="fa-solid fa-university w-5"></i> 
                             <span class="group-hover:underline">USI Lugano, Switzerland</span>
                         </a>
-                        <a href="https://www.linkedin.com" target="_blank" class="flex items-center gap-x-3 text-slate-300 hover:text-white group">
-                            <i class="fa-brands fa-linkedin w-5"></i> 
-                            <span class="group-hover:underline">LinkedIn</span>
+                        <a href="https://innocentkisoka.github.io" target="_blank" class="flex items-center gap-x-3 text-slate-300 hover:text-white group">
+                            <i class="fa-solid fa-globe w-5"></i> 
+                            <span class="group-hover:underline">innocentkisoka.github.io</span>
                         </a>
                     </div>
                 </div>
@@ -664,9 +634,9 @@
 
             <!-- Contact Form -->
             <div class="md:col-span-3 bg-slate-900 border border-slate-800 rounded-3xl p-8">
-                <form action="https://formsubmit.co/contact@innocentkisoka.com" method="POST">
+                <form action="https://formsubmit.co/kisoki@usi.ch" method="POST">
                     <!-- 
-                      Form submissions are sent via FormSubmit.co to contact@innocentkisoka.com
+                      Form submissions are sent via FormSubmit.co to kisoki@usi.ch
                       (which will forward to innocentkisoka@yahoo.com once Cloudflare Email Routing is configured)
                     -->
                     <!-- Honeypot anti-spam -->
@@ -705,7 +675,7 @@
     <!-- Footer -->
     <footer class="border-t border-slate-800 py-8 text-center text-xs text-slate-500">
         <div class="max-w-6xl mx-auto px-6">
-            © <span id="current-year"></span> Innocent Kisoka. Based in Lugano, Switzerland.
+            © <span id="current-year"></span> Innocent Kisoka · Lugano, Switzerland · MSc AI, USI
         </div>
     </footer>
 
