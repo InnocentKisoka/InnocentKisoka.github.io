@@ -139,6 +139,7 @@
                 <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
                     <a href="#about" class="nav-link text-slate-300 hover:text-white">About</a>
                     <a href="#interests" class="nav-link text-slate-300 hover:text-white">Interests</a>
+                    <a href="#hpc" class="nav-link text-slate-300 hover:text-white">HPC &amp; CUDA</a>
                     <a href="#projects" class="nav-link text-slate-300 hover:text-white">Projects</a>
                     <a href="#publications" class="nav-link text-slate-300 hover:text-white">Publications</a>
                     <a href="#experience" class="nav-link text-slate-300 hover:text-white">Education</a>
@@ -173,6 +174,7 @@
             <div class="px-6 py-6 flex flex-col gap-y-4 text-sm font-medium">
                 <a href="#about" onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white py-1">About</a>
                 <a href="#interests" onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white py-1">Interests</a>
+                <a href="#hpc" onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white py-1">HPC &amp; CUDA</a>
                 <a href="#projects" onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white py-1">Projects</a>
                 <a href="#publications" onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white py-1">Publications</a>
                 <a href="#experience" onclick="toggleMobileMenu()" class="text-slate-300 hover:text-white py-1">Education</a>
@@ -284,7 +286,10 @@
                     and scalable experimentation.
                 </p>
                 <p>
-                    I'm eager to contribute to cutting-edge research in LLM alignment, agentic models, and multimodal intelligence. 
+                    I'm eager to contribute to cutting-edge research in LLM alignment, agentic models, multimodal intelligence,
+                    and GPU-accelerated systems. I successfully completed and <strong class="text-slate-200">passed the exam</strong>
+                    for the <strong class="text-slate-200">CSCS–USI Summer School 2026</strong> on Effective High-Performance Computing
+                    &amp; Data Analytics (6 ECTS, USI), with intensive training in GPU architectures, CUDA, and HPC data analytics.
                     Previously, I completed my Bachelor's in Computer Engineering in South Korea on a full scholarship.
                 </p>
             </div>
@@ -363,6 +368,13 @@
                     <span>Parallel Computing (MPI, OpenMP)</span>
                 </div>
                 <div class="skill-pill px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-center gap-x-3 text-sm font-medium">
+                    <i class="fa-solid fa-microchip text-xl w-5 text-green-400"></i>
+                    <span>CUDA C++</span>
+                </div>
+                <div class="skill-pill px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-center gap-x-3 text-sm font-medium">
+                    <span>CUDA Python / CuPy / Numba</span>
+                </div>
+                <div class="skill-pill px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-center gap-x-3 text-sm font-medium">
                     <span>C++ / C#</span>
                 </div>
                 <div class="skill-pill px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-center gap-x-3 text-sm font-medium">
@@ -371,6 +383,173 @@
                 <div class="skill-pill px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-center gap-x-3 text-sm font-medium">
                     <span>High-Performance Computing</span>
                 </div>
+                <div class="skill-pill px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-center gap-x-3 text-sm font-medium">
+                    <span>cuBLAS / GPU Libraries</span>
+                </div>
+                <div class="skill-pill px-5 py-4 bg-slate-950 border border-slate-800 rounded-2xl flex items-center gap-x-3 text-sm font-medium">
+                    <span>MPI + CUDA</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CSCS-USI Summer School / HPC & CUDA -->
+    <section id="hpc" class="max-w-6xl mx-auto px-6 py-20">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-y-4 mb-10">
+            <div>
+                <div class="uppercase text-xs tracking-[2px] font-semibold text-cyan-400 mb-3">CERTIFIED TRAINING</div>
+                <h2 class="section-header text-4xl md:text-5xl tracking-tighter font-semibold">HPC &amp; CUDA</h2>
+                <p class="text-slate-400 mt-2 max-w-xl">
+                    CSCS–USI Summer School 2026 — Effective High-Performance Computing &amp; Data Analytics.
+                    Successfully passed the exam (6 ECTS, binary grade: Pass).
+                </p>
+            </div>
+            <a href="https://github.com/InnocentKisoka/cuda-hpc-portfolio" target="_blank"
+               class="inline-flex items-center gap-x-2 text-sm text-cyan-400 hover:text-cyan-300 transition-colors group">
+                CUDA HPC portfolio on GitHub
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+            </a>
+        </div>
+
+        <!-- Certificate highlight card -->
+        <div class="mb-10 p-6 md:p-8 rounded-3xl bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-cyan-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+            <div class="relative flex flex-col md:flex-row md:items-start gap-6">
+                <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center flex-shrink-0">
+                    <i class="fa-solid fa-award text-2xl text-cyan-400"></i>
+                </div>
+                <div class="flex-1">
+                    <div class="flex flex-wrap items-center gap-2 mb-2">
+                        <span class="text-xs font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">Exam passed · 6 ECTS</span>
+                        <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-800 text-slate-400">July 25–31, 2026</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold tracking-tight mb-2">CSCS–USI Summer School 2026</h3>
+                    <p class="text-cyan-400 font-medium mb-3">Effective High-Performance Computing &amp; Data Analytics</p>
+                    <p class="text-slate-400 leading-relaxed mb-4">
+                        Selected participant in a 6-day intensive programme organised by the
+                        <strong class="text-slate-300">Swiss National Supercomputing Centre (CSCS)</strong> and
+                        <strong class="text-slate-300">Università della Svizzera italiana (USI)</strong>, directed by
+                        Prof.&nbsp;Dr.&nbsp;Olaf Schenk (USI). Included 28 hours of lectures, intensive GPU labs,
+                        industry keynotes, and a guided visit of CSCS. Certified confirmation of participation and exam pass.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-2 text-xs">
+                        <span class="px-2.5 py-1 bg-slate-950 rounded-md border border-slate-800 text-slate-400">CSCS</span>
+                        <span class="px-2.5 py-1 bg-slate-950 rounded-md border border-slate-800 text-slate-400">USI</span>
+                        <span class="px-2.5 py-1 bg-slate-950 rounded-md border border-slate-800 text-slate-400">Advanced Computing Laboratory</span>
+                        <span class="px-2.5 py-1 bg-slate-950 rounded-md border border-slate-800 text-slate-400">Prof. Olaf Schenk</span>
+                        <a href="assets/CSCS_USI_Summer_School_2026_Certificate.pdf" target="_blank"
+                           class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-cyan-500/40 text-cyan-400 hover:bg-cyan-500/10 transition-colors">
+                            <i class="fa-solid fa-file-pdf text-[10px]"></i> Certificate (PDF)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topics from certificate -->
+        <div class="mb-10">
+            <div class="uppercase text-xs tracking-[2px] font-semibold text-slate-500 mb-4">PROGRAMME TOPICS (CERTIFICATE)</div>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i class="fa-solid fa-server text-cyan-400"></i>
+                        <h4 class="font-semibold text-lg">GPU architectures</h4>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed">CPU vs GPU throughput models, warps, memory hierarchy, coalescing, and how hardware choices drive kernel performance.</p>
+                </div>
+                <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i class="fa-solid fa-code text-green-400"></i>
+                        <h4 class="font-semibold text-lg">GPU programming (CUDA)</h4>
+                    </div>
+                    <ul class="text-sm text-slate-400 space-y-1.5 list-disc list-inside">
+                        <li>CUDA programming model (kernels, grids, blocks, threads)</li>
+                        <li>Memory management (host/device, <code class="text-cyan-500/90">cudaMalloc</code>/<code class="text-cyan-500/90">cudaMemcpy</code>, managed memory)</li>
+                        <li>Performance optimization &amp; scientific libraries (e.g.&nbsp;cuBLAS)</li>
+                    </ul>
+                </div>
+                <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i class="fa-brands fa-python text-sky-400"></i>
+                        <h4 class="font-semibold text-lg">GPU-accelerated computing with Python</h4>
+                    </div>
+                    <ul class="text-sm text-slate-400 space-y-1.5 list-disc list-inside">
+                        <li>CUDA Python ecosystem</li>
+                        <li>Numerical libraries (CuPy, Numba CUDA, JAX concepts)</li>
+                        <li>Communication libraries &amp; parallel Python (mpi4py)</li>
+                    </ul>
+                </div>
+                <div class="p-5 rounded-2xl bg-slate-900 border border-slate-800">
+                    <div class="flex items-center gap-3 mb-3">
+                        <i class="fa-solid fa-network-wired text-violet-400"></i>
+                        <h4 class="font-semibold text-lg">Parallel HPC patterns</h4>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed">MPI + CUDA domain decomposition, halo exchange, OpenMP concepts, multi-stream async pipelines, profiling mindset (transfer vs compute bottlenecks), batch jobs on CSCS-class systems.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hands-on CUDA technologies acquired -->
+        <div class="mb-10">
+            <div class="uppercase text-xs tracking-[2px] font-semibold text-slate-500 mb-4">CUDA &amp; GPU TECHNOLOGIES ACQUIRED</div>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">CUDA C++</span>
+                <span class="px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">CUDA runtime API</span>
+                <span class="px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">Kernel launch configs</span>
+                <span class="px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">Shared memory &amp; __syncthreads</span>
+                <span class="px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">Global / shared / pinned memory</span>
+                <span class="px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">Streams &amp; events</span>
+                <span class="px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">Async H2D / D2H overlap</span>
+                <span class="px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">cuBLAS</span>
+                <span class="px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">Thrust / CUB (library-first)</span>
+                <span class="px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">2D CUDA launches &amp; stencils</span>
+                <span class="px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">Performance timing (CUDA events)</span>
+                <span class="px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">CuPy</span>
+                <span class="px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">Numba CUDA</span>
+                <span class="px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">JAX (jit / GPU concepts)</span>
+                <span class="px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">mpi4py</span>
+                <span class="px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">MPI + CUDA multi-process</span>
+                <span class="px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">Halo exchange / domain decomposition</span>
+                <span class="px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">OpenMP / PyOMP concepts</span>
+                <span class="px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">SLURM-style job scripts</span>
+                <span class="px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-sm text-slate-300">Nsight-style profiling workflow</span>
+            </div>
+        </div>
+
+        <!-- Public proof projects -->
+        <div>
+            <div class="uppercase text-xs tracking-[2px] font-semibold text-slate-500 mb-4">PUBLIC CUDA PROJECTS (PORTFOLIO)</div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a href="https://github.com/InnocentKisoka/cuda-memory-and-kernels" target="_blank"
+                   class="group p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/40 transition-colors">
+                    <div class="text-sm font-semibold text-white group-hover:text-cyan-400 mb-1">cuda-memory-and-kernels</div>
+                    <p class="text-xs text-slate-400 leading-relaxed">Host/device memory, custom multi-block kernels, cuBLAS, H2D/kernel/D2H timing &amp; bandwidth.</p>
+                </a>
+                <a href="https://github.com/InnocentKisoka/cuda-stencils-shared-memory" target="_blank"
+                   class="group p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/40 transition-colors">
+                    <div class="text-sm font-semibold text-white group-hover:text-cyan-400 mb-1">cuda-stencils-shared-memory</div>
+                    <p class="text-xs text-slate-400 leading-relaxed">Shared memory, sync, 2D launches, diffusion PDE, halo handling.</p>
+                </a>
+                <a href="https://github.com/InnocentKisoka/cuda-async-pipelines" target="_blank"
+                   class="group p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/40 transition-colors">
+                    <div class="text-sm font-semibold text-white group-hover:text-cyan-400 mb-1">cuda-async-pipelines</div>
+                    <p class="text-xs text-slate-400 leading-relaxed">Streams, events, pinned memory, overlapping transfers with compute.</p>
+                </a>
+                <a href="https://github.com/InnocentKisoka/cuda-pde-miniapp" target="_blank"
+                   class="group p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/40 transition-colors">
+                    <div class="text-sm font-semibold text-white group-hover:text-cyan-400 mb-1">cuda-pde-miniapp</div>
+                    <p class="text-xs text-slate-400 leading-relaxed">Multi-module GPU scientific app: operators, linalg/CG structure, end-to-end debug.</p>
+                </a>
+                <a href="https://github.com/InnocentKisoka/cuda-mpi-domain-decomposition" target="_blank"
+                   class="group p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/40 transition-colors">
+                    <div class="text-sm font-semibold text-white group-hover:text-cyan-400 mb-1">cuda-mpi-domain-decomposition</div>
+                    <p class="text-xs text-slate-400 leading-relaxed">MPI + CUDA domain split, halo exchange, multi-process GPU model.</p>
+                </a>
+                <a href="https://github.com/InnocentKisoka/cuda-hpc-portfolio" target="_blank"
+                   class="group p-5 rounded-2xl bg-slate-900 border border-cyan-500/20 hover:border-cyan-500/40 transition-colors">
+                    <div class="text-sm font-semibold text-cyan-400 mb-1">cuda-hpc-portfolio →</div>
+                    <p class="text-xs text-slate-400 leading-relaxed">Index + experience mapping for GPU/HPC/AI systems roles.</p>
+                </a>
             </div>
         </div>
     </section>
@@ -650,6 +829,34 @@
                     </div>
                 </div>
 
+                <!-- CSCS Summer School -->
+                <div class="flex gap-8 group">
+                    <div class="w-28 flex-shrink-0 pt-1">
+                        <div class="text-sm font-semibold text-slate-300">Jul 2026</div>
+                        <div class="text-xs text-slate-500 mt-0.5">CSCS / USI</div>
+                    </div>
+                    <div class="flex-1 border-l border-slate-700 pl-8 relative">
+                        <div class="absolute -left-[7px] top-1.5 w-3.5 h-3.5 rounded-full bg-cyan-500 border-2 border-slate-900 timeline-dot"></div>
+                        <div class="font-semibold text-xl tracking-tight mb-1">CSCS–USI Summer School 2026</div>
+                        <div class="text-cyan-400 font-medium mb-1">Effective High-Performance Computing &amp; Data Analytics</div>
+                        <div class="text-sm text-slate-400 mb-3">Swiss National Supercomputing Centre (CSCS) &amp; USI · 6 ECTS · Exam: Pass</div>
+                        <p class="text-slate-400 leading-relaxed">
+                            Selected participant; 6 days of lectures and hands-on labs (28+ hours) on GPU architectures,
+                            CUDA programming (model, memory, optimization, scientific libraries), and GPU-accelerated Python
+                            (CUDA Python, numerical &amp; communication libraries). Industry keynotes and guided CSCS visit.
+                            Certificate issued by Prof.&nbsp;Dr.&nbsp;Olaf Schenk (USI Advanced Computing Laboratory).
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-x-2 gap-y-2 text-xs text-slate-400">
+                            <span class="px-2.5 py-1 bg-slate-950 rounded-md border border-slate-800">CUDA C++</span>
+                            <span class="px-2.5 py-1 bg-slate-950 rounded-md border border-slate-800">GPU Architectures</span>
+                            <span class="px-2.5 py-1 bg-slate-950 rounded-md border border-slate-800">CuPy / Numba / JAX</span>
+                            <span class="px-2.5 py-1 bg-slate-950 rounded-md border border-slate-800">MPI + CUDA</span>
+                            <span class="px-2.5 py-1 bg-slate-950 rounded-md border border-slate-800">cuBLAS</span>
+                            <span class="px-2.5 py-1 bg-slate-950 rounded-md border border-emerald-800/50 text-emerald-400/90">Pass · 6 ECTS</span>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- BSc -->
                 <div class="flex gap-8 group">
                     <div class="w-28 flex-shrink-0 pt-1">
@@ -690,6 +897,10 @@
                 <div class="uppercase text-xs tracking-[2px] font-semibold text-cyan-400 mb-6">SELECTED ACHIEVEMENTS &amp; GRANTS</div>
                 <div class="grid md:grid-cols-2 gap-4 text-sm">
                     <div class="flex gap-3 p-4 bg-slate-950 border border-slate-800 rounded-2xl">
+                        <span class="font-semibold text-cyan-400">2026</span>
+                        <span class="text-slate-300">CSCS–USI Summer School on Effective HPC &amp; Data Analytics — Exam passed (6 ECTS)</span>
+                    </div>
+                    <div class="flex gap-3 p-4 bg-slate-950 border border-slate-800 rounded-2xl">
                         <span class="font-semibold text-cyan-400">2024</span>
                         <span class="text-slate-300">The Foundation for the Lugano Faculties of the Università della Svizzera italiana</span>
                     </div>
@@ -697,7 +908,7 @@
                         <span class="font-semibold text-cyan-400">2022</span>
                         <span class="text-slate-300">Programming Excellence Award — Kyungdong University</span>
                     </div>
-                    <div class="flex gap-3 p-4 bg-slate-950 border border-slate-800 rounded-2xl md:col-span-2">
+                    <div class="flex gap-3 p-4 bg-slate-950 border border-slate-800 rounded-2xl">
                         <span class="font-semibold text-cyan-400">2020</span>
                         <span class="text-slate-300">KDU Global – IUCEA 100% Scholarship (2nd Cohort) — South Korea</span>
                     </div>
@@ -1144,7 +1355,7 @@
             initKeyboardControls();
 
             // Bonus: subtle active nav highlight on scroll
-            const sections = ['about', 'skills', 'projects', 'experience', 'contact'];
+            const sections = ['about', 'skills', 'hpc', 'projects', 'experience', 'contact'];
             const navLinks = document.querySelectorAll('nav a[href^="#"]');
 
             window.addEventListener('scroll', () => {
