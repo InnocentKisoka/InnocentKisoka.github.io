@@ -36,7 +36,7 @@
             <div class="flex items-center justify-between h-14">
                 <a href="#" class="text-sm font-semibold tracking-tight text-slate-100">Innocent Kisoka</a>
                 <div class="hidden sm:flex items-center gap-x-6 text-[13px] text-slate-400 font-medium">
-                    <a href="#about" class="nav-link">About</a>
+                    <a href="#about-me" class="nav-link">About Me</a>
                     <a href="#research" class="nav-link">Research</a>
                     <a href="#experience" class="nav-link">Education</a>
                     <a href="#contact" class="nav-link">Contact</a>
@@ -88,10 +88,10 @@
             </div>
         </header>
 
-        <!-- About -->
-        <section id="about" class="border-b border-slate-800/80">
+        <!-- About Me -->
+        <section id="about-me" class="border-b border-slate-800/80">
             <div class="max-w-3xl mx-auto px-5 sm:px-6 py-12">
-                <h2 class="text-xs font-semibold tracking-[0.14em] uppercase text-slate-500 mb-4">About</h2>
+                <h2 class="text-xs font-semibold tracking-[0.14em] uppercase text-slate-500 mb-4">About Me</h2>
                 <div class="space-y-4 text-[15px] leading-relaxed text-slate-400">
                     <p>
                         I am a Master’s student in Artificial Intelligence at Università della Svizzera italiana.
@@ -501,8 +501,8 @@
         document.getElementById('current-year').textContent = new Date().getFullYear();
 
         // Active section highlight
-        const sectionIds = ['about', 'research', 'experience', 'contact'];
-        const navLinks = document.querySelectorAll('nav a.nav-link');
+        const sectionIds = ['about-me', 'research', 'experience', 'contact'];
+        const navLinks = document.querySelectorAll('a.nav-link');
         window.addEventListener('scroll', () => {
             let current = '';
             sectionIds.forEach(id => {
